@@ -1,0 +1,11 @@
+olist_data_pipeline: # This name must match the profile name in dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: olist-assignment-497915       # Your team's GCP Project ID
+      dataset: olist_dwh                     # The target dataset you created earlier
+      threads: 4
+      keyfile: ../gcp-key.json               # The exact path to the JSON key you downloaded earlier
+      location: US                           # Must match your olist_raw location
