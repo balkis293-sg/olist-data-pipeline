@@ -1,0 +1,26 @@
+name: 'dbt_olist'
+version: '1.0.0'
+config-version: 2
+
+# This must match the profile name at the top of your profiles.yml file
+profile: 'dbt_olist'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_olist:
+    # This configures your staging folder files to build as views
+    staging:
+      +materialized: view
+    # This configures your marts folder files (your Star Schema) to build as permanent tables
+    marts:
+      +materialized: table
