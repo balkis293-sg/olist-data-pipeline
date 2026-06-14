@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: olist_raw
+    database: olist-assignment-497915  # the Google project
+    schema: olist_raw        # the dataset name
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: order_payments
+      - name: products
+      - name: sellers
+      - name: order_reviews
