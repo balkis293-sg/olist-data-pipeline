@@ -1,11 +1,14 @@
-dbt_olist: # This name must match the profile name in dbt_project.yml
-  target: dev
+olist_data_pipeline:
   outputs:
     dev:
-      type: bigquery
+      dataset: olist_dwh
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /Users/balkis/Downloads/olist-assignment-497915-68366c85f98f.json
+      location: US
       method: service-account
-      project: olist-assignment-497915       # Your team's GCP Project ID
-      dataset: olist_dwh                     # The target dataset you created earlier
+      priority: interactive
+      project: olist-assignment-497915
       threads: 4
-      keyfile: /home/oasisgem/olist-assignment-497915-68366c85f98f.json              # The exact path to the JSON key you downloaded earlier
-      location: US                           # Must match your olist_raw location
+      type: bigquery
+  target: dev

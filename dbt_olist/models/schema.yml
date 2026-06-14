@@ -1,0 +1,188 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Cleaned customer data from the Olist raw dataset.
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: customer_unique_id
+        tests:
+          - not_null
+
+  - name: stg_orders
+    description: Cleaned order data with standardized timestamps and order status.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    description: Cleaned order item data with item price and freight value.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: seller_id
+        tests:
+          - not_null
+
+  - name: stg_payments
+    description: Cleaned payment data used to calculate order revenue.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: payment_value
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: Cleaned product data.
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sellers
+    description: Cleaned seller data.
+    columns:
+      - name: seller_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_reviews
+    description: Cleaned order review data.
+    columns:
+      - name: review_id
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: dim_customers
+    description: Customer dimension table for the star schema.
+    columns:
+      - name: customer_key
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_products
+    description: Product dimension table for the star schema.
+    columns:
+      - name: product_key
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_sellers
+    description: Seller dimension table for the star schema.
+    columns:
+      - name: seller_key
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    description: Date dimension table for time-based analysis.
+    columns:
+      - name: date_key
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_orders
+    description: Order-item level fact table connected to customer, product, seller, and date dimensions.
+    columns:
+      - name: order_item_sk
+        tests:
+          - not_null
+          - unique
+
+      - name: order_key
+        tests:
+          - not_null
+
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+
+      - name: product_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_key
+
+      - name: seller_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_sellers')
+              field: seller_key
+
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+
+  - name: int_order_payments
+    description: Order-level payment aggregation used to calculate revenue.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: order_revenue
+        tests:
+          - not_null
+
+  - name: int_customer_orders
+    description: Customer order history combining customers, orders, and payment revenue.
+    columns:
+      - name: customer_unique_id
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+      - name: order_revenue
+        tests:
+          - not_null
+
+  - name: fct_customer_rfm
+    description: Customer-level RFM mart for repeat-buyer, churn-risk, and customer-segment analysis.
+    columns:
+      - name: customer_unique_id
+        tests:
+          - not_null
+          - unique
+      - name: recency_days
+        tests:
+          - not_null
+      - name: frequency
+        tests:
+          - not_null
+      - name: monetary_value
+        tests:
+          - not_null
+      - name: customer_segment
+        tests:
+          - not_null
