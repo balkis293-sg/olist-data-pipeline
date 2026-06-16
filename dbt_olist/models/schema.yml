@@ -1,6 +1,9 @@
 version: 2
 
 models:
+  # ─────────────────────────────────────────────
+  # STAGING LAYER
+  # ─────────────────────────────────────────────
   - name: stg_customers
     description: Cleaned customer data from the Olist raw dataset.
     columns:
@@ -18,9 +21,19 @@ models:
         tests:
           - not_null
           - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
       - name: customer_id
         tests:
           - not_null
+      - name: order_status
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['delivered', 'shipped', 'canceled', 'unavailable', 'invoiced', 'processing', 'created', 'approved']
+      - name: order_purchase_timestamp
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: timestamp
 
   - name: stg_order_items
     description: Cleaned order item data with item price and freight value.
@@ -34,6 +47,16 @@ models:
       - name: seller_id
         tests:
           - not_null
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
+      - name: freight_value
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
 
   - name: stg_payments
     description: Cleaned payment data used to calculate order revenue.
@@ -44,6 +67,19 @@ models:
       - name: payment_value
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100000
+              strictly: false
+      - name: payment_type
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['credit_card', 'boleto', 'voucher', 'debit_card', 'not_defined']
+      - name: payment_installments
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 24
 
   - name: stg_products
     description: Cleaned product data.
@@ -52,6 +88,13 @@ models:
         tests:
           - not_null
           - unique
+      - name: product_weight_g
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
+              config:
+                severity: warn
 
   - name: stg_sellers
     description: Cleaned seller data.
@@ -70,14 +113,30 @@ models:
       - name: order_id
         tests:
           - not_null
+      - name: review_score
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
 
+  # ─────────────────────────────────────────────
+  # DIMENSION TABLES
+  # ─────────────────────────────────────────────
   - name: dim_customers
     description: Customer dimension table for the star schema.
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 90000
+          max_value: 110000
     columns:
       - name: customer_key
         tests:
           - not_null
           - unique
+      - name: customer_state
+        tests:
+          - dbt_expectations.expect_column_value_lengths_to_equal:
+              value: 2
 
   - name: dim_products
     description: Product dimension table for the star schema.
@@ -89,60 +148,114 @@ models:
 
   - name: dim_sellers
     description: Seller dimension table for the star schema.
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 3000
+          max_value: 4000
     columns:
       - name: seller_key
         tests:
           - not_null
           - unique
+      - name: seller_state
+        tests:
+          - dbt_expectations.expect_column_value_lengths_to_equal:
+              value: 2
 
   - name: dim_date
     description: Date dimension table for time-based analysis.
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal:
+          value: 1096
     columns:
       - name: date_key
         tests:
           - not_null
           - unique
+          - dbt_expectations.expect_column_value_lengths_to_equal:
+              value: 8
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[0-9]{8}$"
+      - name: year
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [2016, 2017, 2018]
+      - name: month
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 12
+      - name: quarter
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
+      - name: day_of_week
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 7
 
+  # ─────────────────────────────────────────────
+  # FACT TABLE
+  # ─────────────────────────────────────────────
   - name: fact_orders
     description: Order-item level fact table connected to customer, product, seller, and date dimensions.
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 100000
+          max_value: 130000
     columns:
       - name: order_item_sk
         tests:
           - not_null
           - unique
-
       - name: order_key
         tests:
           - not_null
-
       - name: customer_key
         tests:
           - not_null
           - relationships:
               to: ref('dim_customers')
               field: customer_key
-
       - name: product_key
         tests:
           - not_null
           - relationships:
               to: ref('dim_products')
               field: product_key
-
       - name: seller_key
         tests:
           - not_null
           - relationships:
               to: ref('dim_sellers')
               field: seller_key
-
       - name: date_key
         tests:
           - not_null
           - relationships:
               to: ref('dim_date')
               field: date_key
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^(2016|2017|2018)(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$"
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
+          - dbt_expectations.expect_column_mean_to_be_between:
+              min_value: 50
+              max_value: 200
+      - name: freight_value
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
 
+  # ─────────────────────────────────────────────
+  # INTERMEDIATE LAYER
+  # ─────────────────────────────────────────────
   - name: int_order_payments
     description: Order-level payment aggregation used to calculate revenue.
     columns:
@@ -153,6 +266,13 @@ models:
       - name: order_revenue
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              quantile: 0.5
+              min_value: 50
+              max_value: 200
 
   - name: int_customer_orders
     description: Customer order history combining customers, orders, and payment revenue.
@@ -163,12 +283,26 @@ models:
       - name: order_id
         tests:
           - not_null
+      - name: order_status
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['delivered']
       - name: order_revenue
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
 
+  # ─────────────────────────────────────────────
+  # RFM MART
+  # ─────────────────────────────────────────────
   - name: fct_customer_rfm
     description: Customer-level RFM mart for repeat-buyer, churn-risk, and customer-segment analysis.
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 90000
+          max_value: 100000
     columns:
       - name: customer_unique_id
         tests:
@@ -177,12 +311,49 @@ models:
       - name: recency_days
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 800
+          - dbt_expectations.expect_column_mean_to_be_between:
+              min_value: 100
+              max_value: 400
       - name: frequency
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 50
+          - dbt_expectations.expect_column_mean_to_be_between:
+              min_value: 1
+              max_value: 1.5
       - name: monetary_value
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100000
+      - name: avg_order_value
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
       - name: customer_segment
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set:
+                - 'Champions'
+                - 'Loyal Customers'
+                - 'At-Risk Customers'
+                - 'Lost Customers'
+                - 'New / Low Activity Customers'
+          - dbt_expectations.expect_column_distinct_count_to_equal:
+              value: 5
+      - name: is_repeat_buyer
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [true, false]
+      - name: is_churn_risk
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [true, false]
