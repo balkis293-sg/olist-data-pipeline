@@ -93,6 +93,14 @@ All tests run under a single command (`dbt test`). We use three complementary te
 2. **dbt-expectations** covers everything that built-in generics cannot: range checks, string patterns, statistical distribution bounds, and table-level row counts.
 3. **Singular tests** remain for multi-column conditional logic — specifically, verifying that derived boolean flags are consistent with the underlying numeric metrics.
 ---
+#### Why use DBT expectation over Great Expectation?
+1. transformations are happening in BigQuery so we choose dbt-expectations (or dbt's built-in tests) over Great Expectations because it keeps data quality checks inside the same workflow as the transformations.
+2. Benefits:
+    - No data movement
+    - No separate execution environment
+    - Leverages BigQuery's compute engine
+    - Simpler architecture
+---
 ### 4.3 Installation
 ```yaml
 # dbt_olist/packages.yml
