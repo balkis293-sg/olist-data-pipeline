@@ -1,9 +1,0 @@
-meltano==3.7.8
-dagster==1.9.13
-dagster-webserver==1.9.13
-dagster-dbt==0.25.13
-dagster-meltano==1.5.5
-dagster-duckdb==0.25.13
-dagster-duckdb-pandas==0.25.13
-duckdb==1.3.0
-python-dotenv==1.1.0

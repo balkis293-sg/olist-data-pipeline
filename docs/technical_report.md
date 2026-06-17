@@ -72,8 +72,213 @@ Following the ELT pattern, raw data is loaded into BigQuery before any transform
 
 ---
 
-*Sections 2–7 to be completed by others*
+## 3. ELT Pipeline
 
+**Tool:** dbt Core v1.9.6  
+**Warehouse:** Google BigQuery  
+**Input Dataset:** `olist_raw`  
+**Output Dataset:** `olist_dwh`
+
+### 3.1 Objective
+
+The objective of the ELT pipeline is to transform the raw Olist tables loaded into BigQuery into a clean, query-ready dimensional warehouse. The pipeline follows an ELT pattern: raw data is first loaded into BigQuery, then dbt is used to clean, standardise, validate, and model the data into staging views and star schema tables.
+
+This phase focuses on preparing the core warehouse tables required for downstream analytics. Customer segmentation and RFM analysis are handled in the later Python analysis phase, rather than inside the dbt marts layer.
+
+### 3.2 dbt Project Structure
+
+The dbt project is organised into two main modelling layers:
+
+```text
+dbt_olist/
+├── models/
+│   ├── staging/
+│   │   ├── stg_customers.sql
+│   │   ├── stg_orders.sql
+│   │   ├── stg_order_items.sql
+│   │   ├── stg_payments.sql
+│   │   ├── stg_products.sql
+│   │   ├── stg_reviews.sql
+│   │   └── stg_sellers.sql
+│   └── marts/
+│       ├── dim_customers.sql
+│       ├── dim_products.sql
+│       ├── dim_sellers.sql
+│       ├── dim_date.sql
+│       └── fact_orders.sql
+├── sources.yml
+├── schema.yml
+├── dbt_project.yml
+└── packages.yml
+```
+
+The final marts layer intentionally contains only the star schema models required for the warehouse design:
+
+| Model | Type | Purpose |
+|---|---|---|
+| `dim_customers` | Dimension | Customer identifiers and location attributes |
+| `dim_products` | Dimension | Product metadata and product attributes |
+| `dim_sellers` | Dimension | Seller identifiers and location attributes |
+| `dim_date` | Dimension | Calendar attributes for time-based reporting |
+| `fact_orders` | Fact | Order-item level transaction table |
+
+The previously drafted intermediate and RFM models — `int_order_payments.sql`, `int_customer_orders.sql`, and `fct_customer_rfm.sql` — were removed from the marts layer because they are not required for the core ELT warehouse build. RFM segmentation will be performed downstream in the analysis notebook.
+
+### 3.3 Source Configuration
+
+The dbt source layer points to the raw BigQuery dataset:
+
+```text
+olist-assignment-497915.olist_raw
+```
+
+The following raw tables are referenced through `sources.yml`:
+
+| Source Table | Staging Model |
+|---|---|
+| `customers` | `stg_customers` |
+| `orders` | `stg_orders` |
+| `order_items` | `stg_order_items` |
+| `order_payments` | `stg_payments` |
+| `products` | `stg_products` |
+| `order_reviews` | `stg_reviews` |
+| `sellers` | `stg_sellers` |
+
+### 3.4 Staging Layer Transformations
+
+The staging layer standardises raw data before it is used by the warehouse marts.
+
+Key transformations include:
+
+| Staging Model | Key Transformations |
+|---|---|
+| `stg_customers` | Trims customer IDs, standardises city/state fields, preserves `customer_unique_id` for repeat-buyer analysis |
+| `stg_orders` | Trims IDs, lowercases order status, casts order timestamp columns into timestamp fields |
+| `stg_order_items` | Standardises order-item level fields and casts price/freight values into numeric types |
+| `stg_payments` | Standardises payment types and casts payment values/installments into numeric fields |
+| `stg_products` | Cleans product IDs and product attributes such as category, dimensions, and weight |
+| `stg_reviews` | Standardises review identifiers and review score fields |
+| `stg_sellers` | Cleans seller IDs and standardises seller city/state fields |
+
+These staging models are materialised as views because they are lightweight cleaning layers and should always reflect the latest raw data.
+
+### 3.5 Star Schema Marts
+
+The marts layer converts the cleaned staging data into a dimensional model optimised for analytics.
+
+#### Dimension Tables
+
+`dim_customers` contains customer-level identifiers and location fields. It retains both `customer_id` and `customer_unique_id`, allowing downstream analysts to distinguish order-level customer records from true unique customers.
+
+`dim_products` contains product metadata such as category, product dimensions, weight, and descriptive attributes.
+
+`dim_sellers` contains seller identifiers and seller location information.
+
+`dim_date` is a generated calendar table covering the Olist order period. It supports time-series analysis using fields such as year, month, quarter, day of week, and weekend flag.
+
+#### Fact Table
+
+`fact_orders` is the central fact table. Its grain is:
+
+```text
+1 row = 1 order item
+```
+
+This grain was chosen because the Olist dataset allows one order to contain multiple products. The fact table links each order item to the customer, product, seller, and purchase date dimensions.
+
+Core measures include:
+
+| Measure | Description |
+|---|---|
+| `price` | Product sale price for the order item |
+| `freight_value` | Shipping cost for the order item |
+
+Foreign keys connect the fact table to the dimensional tables:
+
+| Foreign Key | Dimension |
+|---|---|
+| `customer_key` | `dim_customers` |
+| `product_key` | `dim_products` |
+| `seller_key` | `dim_sellers` |
+| `date_key` | `dim_date` |
+
+### 3.6 Materialisation Strategy
+
+| Layer | Materialisation | Rationale |
+|---|---|---|
+| Staging models | Views | Lightweight cleaning logic; always reflects raw source data |
+| Dimension tables | Tables | Stable lookup tables used repeatedly by analysts |
+| Fact table | Table | Central transaction table; materialised for faster analytical queries |
+
+### 3.7 Data Cleaning and Validation Steps
+
+The ELT pipeline includes the following cleaning and validation logic:
+
+- Standardised text columns using trimming and case normalisation.
+- Cast raw string timestamp fields into timestamp/date-compatible fields.
+- Cast numeric fields such as price, freight, payment value, and product dimensions into numeric types.
+- Filtered or flagged invalid numeric values through dbt tests.
+- Enforced primary key uniqueness on key dimension tables.
+- Enforced referential integrity between the fact table and dimension tables.
+- Validated accepted values for fields such as order status and payment type.
+
+### 3.8 Commands Used
+
+The pipeline can be run from the `dbt_olist` directory using:
+
+```bash
+dbt deps
+dbt parse
+dbt run
+dbt test
+```
+
+A successful `dbt run` builds 12 models:
+
+| Model Type | Count |
+|---|---:|
+| Staging views | 7 |
+| Dimension tables | 4 |
+| Fact tables | 1 |
+| Total models | 12 |
+
+Recent run result:
+
+```text
+Completed successfully
+Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
+```
+
+### 3.9 Design Decisions
+
+| Decision | Rationale |
+|---|---|
+| Use dbt for transformations | Provides modular SQL models, lineage, repeatable builds, and integrated testing |
+| Use staging views | Keeps raw-to-clean transformation transparent and lightweight |
+| Use a star schema | Supports efficient business analysis across customers, products, sellers, and time |
+| Use order-item grain for `fact_orders` | Preserves product-level sales detail and avoids losing multi-item order information |
+| Keep RFM out of marts | RFM is an analytical output and is handled downstream in Python analysis rather than the core warehouse build |
+| Exclude geolocation from current scope | The repeat-buyer business problem can be addressed using customers, orders, payments, and order items; geolocation can be added later for regional analysis |
+
+### 3.10 ELT Pipeline Output
+
+The final ELT pipeline produces a clean BigQuery warehouse in `olist_dwh`:
+
+```text
+olist_raw
+   ↓
+dbt staging views
+   ↓
+olist_dwh.dim_customers
+olist_dwh.dim_products
+olist_dwh.dim_sellers
+olist_dwh.dim_date
+olist_dwh.fact_orders
+```
+
+This warehouse provides a reliable foundation for the downstream Python analysis and executive reporting components of the project.
+
+---
 ## 4. Data Quality Testing
 **Tool:** [dbt Tests](https://docs.getdbt.com/docs/build/data-tests) — Built-in Generic, Singular, and [dbt-expectations](https://github.com/calogica/dbt-expectations)
 **Location:** `models/schema.yml`, `models/schema_expectations.yml`, and `tests/`
@@ -304,3 +509,9 @@ Singular tests only for cross-column logic        | Minimise custom SQL maintena
 Distribution tests (mean, quantile)               | Catches subtle drift that row-level checks miss
 Row count bounds on all major tables              | Smoke test against catastrophic data loss
 Separate star schema vs. RFM tests                | Enables faster debugging through elimination
+
+---
+
+*Sections 2–7 to be completed by others*
+
+---
