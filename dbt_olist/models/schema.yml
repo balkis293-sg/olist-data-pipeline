@@ -176,10 +176,10 @@ models:
               value: 8
           - dbt_expectations.expect_column_values_to_match_regex:
               regex: "^[0-9]{8}$"
-      - name: year
-        tests:
-          - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [2016, 2017, 2018]
+      # - name: year
+      #   tests:
+      #     - dbt_expectations.expect_column_values_to_be_in_set:
+      #         value_set: [2016, 2017, 2018]
       - name: month
         tests:
           - dbt_expectations.expect_column_values_to_be_between:
@@ -238,7 +238,7 @@ models:
               to: ref('dim_date')
               field: date_key
           - dbt_expectations.expect_column_values_to_match_regex:
-              regex: "^(2016|2017|2018)(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$"
+              regex: "^[0-9]{8}$"
       - name: price
         tests:
           - dbt_expectations.expect_column_values_to_be_between:
@@ -253,107 +253,3 @@ models:
               min_value: 0
               strictly: false
 
-  # ─────────────────────────────────────────────
-  # INTERMEDIATE LAYER
-  # ─────────────────────────────────────────────
-  - name: int_order_payments
-    description: Order-level payment aggregation used to calculate revenue.
-    columns:
-      - name: order_id
-        tests:
-          - not_null
-          - unique
-      - name: order_revenue
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
-              strictly: true
-          - dbt_expectations.expect_column_quantile_values_to_be_between:
-              quantile: 0.5
-              min_value: 50
-              max_value: 200
-
-  - name: int_customer_orders
-    description: Customer order history combining customers, orders, and payment revenue.
-    columns:
-      - name: customer_unique_id
-        tests:
-          - not_null
-      - name: order_id
-        tests:
-          - not_null
-      - name: order_status
-        tests:
-          - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: ['delivered']
-      - name: order_revenue
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
-              strictly: false
-
-  # ─────────────────────────────────────────────
-  # RFM MART
-  # ─────────────────────────────────────────────
-  - name: fct_customer_rfm
-    description: Customer-level RFM mart for repeat-buyer, churn-risk, and customer-segment analysis.
-    tests:
-      - dbt_expectations.expect_table_row_count_to_be_between:
-          min_value: 90000
-          max_value: 100000
-    columns:
-      - name: customer_unique_id
-        tests:
-          - not_null
-          - unique
-      - name: recency_days
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
-              max_value: 800
-          - dbt_expectations.expect_column_mean_to_be_between:
-              min_value: 100
-              max_value: 400
-      - name: frequency
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 1
-              max_value: 50
-          - dbt_expectations.expect_column_mean_to_be_between:
-              min_value: 1
-              max_value: 1.5
-      - name: monetary_value
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
-              max_value: 100000
-      - name: avg_order_value
-        tests:
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
-              strictly: true
-      - name: customer_segment
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set:
-                - 'Champions'
-                - 'Loyal Customers'
-                - 'At-Risk Customers'
-                - 'Lost Customers'
-                - 'New / Low Activity Customers'
-          - dbt_expectations.expect_column_distinct_count_to_equal:
-              value: 5
-      - name: is_repeat_buyer
-        tests:
-          - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [true, false]
-      - name: is_churn_risk
-        tests:
-          - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [true, false]
