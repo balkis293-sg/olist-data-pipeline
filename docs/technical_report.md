@@ -511,6 +511,144 @@ Row count bounds on all major tables              | Smoke test against catastrop
 Separate star schema vs. RFM tests                | Enables faster debugging through elimination
 
 ---
+## 5. Data Analysis with Python
+
+**Tool:** Python (pandas, matplotlib, seaborn) + SQLAlchemy
+**Warehouse Connection:** `bigquery://olist-assignment-497915/olist_dwh`
+**Notebook:** `dbt_olist/notebooks/olist_data_analysis.ipynb`
+
+### 5.1 Objective
+
+The objective of this phase is to connect to the BigQuery data warehouse and perform exploratory data analysis to answer the core business question: **which customers are most likely to become repeat buyers, and how can Olist increase customer retention?** This phase consumes the star schema and RFM mart built in the ELT pipeline (Section 3) and translates them into actionable business insights, charts, and a presentation deck.
+
+### 5.2 Connection Method
+
+The notebook connects to BigQuery using **SQLAlchemy** with the `sqlalchemy-bigquery` dialect, authenticated via a GCP service account JSON key rather than interactive `gcloud` login. This was chosen for portability across team members' machines and to avoid requiring each analyst to set up Application Default Credentials individually.
+
+```python
+from sqlalchemy import create_engine, text
+import pandas as pd
+
+PROJECT_ID       = 'olist-assignment-497915'
+DATASET          = 'olist_dwh'
+CREDENTIALS_PATH = '../credentials/service_account.json'
+
+engine = create_engine(
+    f'bigquery://{PROJECT_ID}/{DATASET}',
+    credentials_path=CREDENTIALS_PATH
+)
+
+def query(sql):
+    with engine.connect() as conn:
+        return pd.read_sql(text(sql), conn)
+```
+
+The service account key is excluded from version control via `.gitignore` and shared between team members through a private channel rather than committed to the repository.
+
+### 5.3 Tables Consumed
+
+This phase reads exclusively from the `olist_dwh` mart layer built in Section 3 — no raw or staging tables are queried directly.
+
+| Table | Used For |
+|---|---|
+| `fact_orders` | Revenue, freight, and order-item level transactions |
+| `dim_customers` | Customer unique IDs for grouping |
+| `dim_date` | Year/month grouping for time-series analysis |
+| `dim_products` | Category names for product analysis |
+| `fct_customer_rfm` | Pre-computed RFM scores and segment labels (see Section 3.5 / 4.5) |
+
+Note: RFM recency, frequency, monetary value, and segment labels are **not recalculated in Python**. They are computed once in the `fct_customer_rfm` dbt model (Section 3) and validated by the dbt-expectations RFM test suite (Section 4.5). This phase queries that mart directly to avoid duplicating segmentation logic in two places, ensuring the numbers shown in the analysis and the numbers validated by the test suite are guaranteed to match.
+
+### 5.4 Analyses Performed
+
+#### 5.4.1 Monthly Sales Trends
+
+**Business question:** How has revenue and order volume changed month by month?
+
+`fact_orders` is joined to `dim_date` and grouped by month to produce a time series of total revenue (`price + freight_value`) and distinct order counts.
+
+| Metric | Value |
+|---|---|
+| Total revenue (Sep 2016 – Aug 2018) | R$15,843,553 |
+| Peak revenue month | November 2017 — R$1,179,144 (highest month in the dataset) |
+| Revenue growth | ~10x from October 2016 to October 2017 |
+
+The sharp drop in the final month of the series reflects the boundary of the dataset (Olist released this as a fixed historical snapshot), not an actual decline in business activity.
+
+#### 5.4.2 Top-Selling Products
+
+**Business question:** Which product categories generate the most revenue and units sold?
+
+`fact_orders` is joined to `dim_products` and grouped by category, ranked separately by total revenue and total items sold. Portuguese category names from the source data are mapped to English for presentation purposes.
+
+| Rank | Category | Revenue | Items Sold | Avg Price |
+|---|---|---|---|---|
+| 1 | Health & Beauty | R$1,441,248 | 9,670 | R$130 |
+| 2 | Watches & Gifts | R$1,305,542 | 5,991 | R$201 |
+| 3 | Bed, Bath & Table | R$1,241,682 | 11,115 | R$93 |
+
+Revenue rank and items-sold rank do not align — Bed, Bath & Table sells the most units but ranks third in revenue due to a lower average price, while Watches & Gifts ranks second in revenue with fewer units sold due to a higher average price. This indicates that category-level promotional strategy needs to account for price point, not unit volume alone.
+
+#### 5.4.3 Customer Segmentation by Purchase Behaviour
+
+**Business question:** Which customers are most valuable, at-risk, or likely to churn?
+
+This analysis queries the pre-built `fct_customer_rfm` mart (Section 3.5) rather than recalculating RFM in Python. Each customer carries a `recency_days`, `frequency`, `monetary_value`, and `customer_segment` label, all validated by the dbt-expectations test suite (Section 4.5) prior to analysis.
+
+| Segment | Customers | % of Total | Total Revenue | Avg Spend |
+|---|---|---|---|---|
+| At-Risk Customers | 22,596 | 23.7% | R$3,694,524 | R$163 |
+| Loyal Customers | 28,479 | 29.8% | R$3,619,019 | R$127 |
+| Need Attention | 18,038 | 18.9% | R$2,788,808 | R$154 |
+| Promising | 15,110 | 15.8% | R$2,755,731 | R$182 |
+| Champions | 6,177 | 6.5% | R$1,921,528 | R$311 |
+| Potential Loyalists | 5,020 | 5.3% | R$1,063,941 | R$212 |
+
+Average order frequency across all customers is 1.03, with 75% of customers having placed exactly one order — confirming the repeat-buyer problem stated in the original business question. Champions represent only 6.5% of customers but generate 12.1% of total revenue, while At-Risk customers represent the largest revenue exposure (23.3% of revenue, R$3.69M) at risk of permanent churn.
+
+### 5.5 Visualisations
+
+| Chart | Type | Purpose |
+|---|---|---|
+| Monthly sales trends | Dual-axis line chart | Revenue and order volume over time |
+| Top products by revenue | Horizontal bar chart | Top 10 categories ranked by revenue |
+| Top products by items sold | Horizontal bar chart | Top 10 categories ranked by units sold |
+| Segment customer count | Horizontal bar chart | Number of customers per RFM segment |
+| Segment revenue | Horizontal bar chart | Total revenue per RFM segment |
+| Segment bubble chart | Scatter/bubble chart | Recency vs. average spend, bubble size = total revenue per segment |
+
+Horizontal bar charts were used over vertical bars for all ranking visualisations because category and segment names are long and read more clearly on the y-axis. A bubble chart was used for the final segment view (in place of a recency × frequency heatmap initially drafted) because it expresses three dimensions — recency, monetary value, and total revenue — in a single plot without requiring the audience to interpret a grid of numeric scores.
+
+### 5.6 Business Recommendations
+
+Based on the segmentation results, three recommendations were prioritised for the stakeholder presentation:
+
+| Priority | Recommendation | Target Segment | Rationale |
+|---|---|---|---|
+| 1 | Win back At-Risk customers | At-Risk Customers (22,596 / 23.7%) | Have not purchased in over 400 days, representing R$3.69M in historical revenue. Targeted win-back discount campaigns recommended. |
+| 2 | Protect Champions | Champions (6,177 / 6.5%) | Generate 12.1% of total revenue at an average spend of R$311. Loyalty perks and priority service recommended to retain this disproportionately valuable segment. |
+| 3 | Convert Promising customers | Promising (15,110 / 15.8%) | Purchased recently but only once. A second-purchase follow-up campaign recommended to move this segment toward Loyal Customer status. |
+
+### 5.7 Design Decisions
+
+| Decision | Rationale |
+|---|---|
+| Use SQLAlchemy instead of the native `google-cloud-bigquery` client directly | Matches the assignment specification and keeps query logic portable if the warehouse backend changes |
+| Authenticate via service account key rather than `gcloud` ADC login | Simpler to distribute across team members without individual GCP CLI setup |
+| Query `fct_customer_rfm` instead of recalculating RFM in pandas | Avoids duplicating segmentation logic; guarantees consistency with the dbt-expectations test suite in Section 4.5 |
+| Translate Portuguese category names to English in the notebook, not in dbt | Translation is presentation-layer only and does not affect upstream modelling or tests |
+| Replace the R×F heatmap with a bubble chart | Heatmap required the audience to cross-reference a numeric grid; the bubble chart communicates the same insight (recency vs. value) more intuitively for a non-technical audience |
+
+### 5.8 Outputs
+
+| File | Description |
+|---|---|
+| `olist_data_analysis.ipynb` | Main analysis notebook |
+| `olist_monthly_sales.csv` | Exported monthly revenue and order counts |
+| `olist_top_products.csv` | Exported top 15 categories by revenue |
+| `olist_rfm_segments.csv` | Exported customer-level RFM scores and segments |
+| `olist_rfm_slides.pptx` | 4-slide stakeholder presentation deck |
+
 
 *Sections 2–7 to be completed by others*
 
