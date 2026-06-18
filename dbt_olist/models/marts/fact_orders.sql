@@ -21,7 +21,14 @@ SELECT
     CAST(FORMAT_DATE('%Y%m%d', DATE(o.order_purchase_timestamp)) AS STRING) AS date_key,
 
     i.price,
-    i.freight_value
+    i.freight_value,
+
+    (i.price + i.freight_value) AS total_sale_amount,
+
+    SAFE_DIVIDE(
+        i.freight_value,
+        i.price + i.freight_value
+    ) AS freight_percentage
 
 FROM staging_order_items i
 LEFT JOIN staging_orders o

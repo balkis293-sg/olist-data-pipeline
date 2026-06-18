@@ -252,4 +252,15 @@ models:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 0
               strictly: false
-
+      - name: total_sale_amount
+        description: Total value of the order item including freight.
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
+      - name: freight_percentage
+        description: Percentage of the total sale amount attributed to freight.
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1

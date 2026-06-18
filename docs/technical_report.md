@@ -19,7 +19,6 @@
 
 ## 1. Data Ingestion
 
-**Owner:** Member 1
 **Tool:** [Meltano](https://meltano.com/) v3.x
 **Destination:** Google BigQuery (`olist_raw` dataset)
 
@@ -83,7 +82,7 @@ Following the ELT pattern, raw data is loaded into BigQuery before any transform
 
 The objective of the ELT pipeline is to transform the raw Olist tables loaded into BigQuery into a clean, query-ready dimensional warehouse. The pipeline follows an ELT pattern: raw data is first loaded into BigQuery, then dbt is used to clean, standardise, validate, and model the data into staging views and star schema tables.
 
-This phase focuses on preparing the core warehouse tables required for downstream analytics. Customer segmentation and RFM analysis are handled in the later Python analysis phase, rather than inside the dbt marts layer.
+This phase focuses on preparing the core warehouse tables required for downstream analytics.
 
 ### 3.2 dbt Project Structure
 
@@ -121,8 +120,6 @@ The final marts layer intentionally contains only the star schema models require
 | `dim_sellers` | Dimension | Seller identifiers and location attributes |
 | `dim_date` | Dimension | Calendar attributes for time-based reporting |
 | `fact_orders` | Fact | Order-item level transaction table |
-
-The previously drafted intermediate and RFM models — `int_order_payments.sql`, `int_customer_orders.sql`, and `fct_customer_rfm.sql` — were removed from the marts layer because they are not required for the core ELT warehouse build. RFM segmentation will be performed downstream in the analysis notebook.
 
 ### 3.3 Source Configuration
 
@@ -280,24 +277,36 @@ This warehouse provides a reliable foundation for the downstream Python analysis
 
 ---
 ## 4. Data Quality Testing
+
 **Tool:** [dbt Tests](https://docs.getdbt.com/docs/build/data-tests) — Built-in Generic, Singular, and [dbt-expectations](https://github.com/calogica/dbt-expectations)
+
 **Location:** `models/schema.yml`, `models/schema_expectations.yml`, and `tests/`
+
 ---
+
 ### 4.1 Objective
+
 Ensure data integrity, referential consistency, and business-logic correctness across all layers of the warehouse — from staging through to the final RFM analytics mart. Tests act as automated guardrails that catch problems before bad data reaches analysts or downstream Python analysis notebooks.
+
 ---
+
 ### 4.2 Testing Framework
+
 All tests run under a single command (`dbt test`). We use three complementary test types:
 | Type | Source File | What It Validates |
 |------|-------------|-------------------|
 | Built-in Generic | `schema.yml` | Nulls, uniqueness, referential integrity (FK → PK) |
 | dbt-expectations | `schema_expectations.yml` | Value ranges, regex patterns, data types, row counts, distributions |
 | Singular | `tests/*.sql` | Cross-column business logic that YAML cannot express |
+
 #### Why Three Types?
+
 1. **Built-in generics** are irreplaceable for `relationships` tests (foreign key validation) and provide the clearest syntax for `not_null` / `unique`.
 2. **dbt-expectations** covers everything that built-in generics cannot: range checks, string patterns, statistical distribution bounds, and table-level row counts.
 3. **Singular tests** remain for multi-column conditional logic — specifically, verifying that derived boolean flags are consistent with the underlying numeric metrics.
+
 ---
+
 #### Why use DBT expectation over Great Expectation?
 1. transformations are happening in BigQuery so we choose dbt-expectations (or dbt's built-in tests) over Great Expectations because it keeps data quality checks inside the same workflow as the transformations.
 2. Benefits:
@@ -305,15 +314,17 @@ All tests run under a single command (`dbt test`). We use three complementary te
     - No separate execution environment
     - Leverages BigQuery's compute engine
     - Simpler architecture
+
 ---
+
 ### 4.3 Installation
+
 ```yaml
 # dbt_olist/packages.yml
 packages:
 - package: calogica/dbt_expectations
 version: [">=0.10.0", "<0.11.0"]
 dbt deps
----
 ```
 4.4 Built-in Generic Tests (schema.yml) — 38 Tests
 ====================================================
@@ -350,22 +361,6 @@ fact_orders        | customer_key        | not_null, relationships -> dim_custom
 fact_orders        | product_key         | not_null, relationships -> dim_products
 fact_orders        | seller_key          | not_null, relationships -> dim_sellers
 fact_orders        | date_key            | not_null, relationships -> dim_date
-
-INTERMEDIATE & RFM MART (3 models, 10 tests)
-----------------------------------------------
-Model              | Column              | Tests
--------------------|---------------------|---------------------------
-int_order_payments | order_id            | not_null, unique
-int_order_payments | order_revenue       | not_null
-int_customer_orders| customer_unique_id  | not_null
-int_customer_orders| order_id            | not_null
-int_customer_orders| order_revenue       | not_null
-fct_customer_rfm   | customer_unique_id  | not_null, unique
-fct_customer_rfm   | recency_days        | not_null
-fct_customer_rfm   | frequency           | not_null
-fct_customer_rfm   | monetary_value      | not_null
-fct_customer_rfm   | customer_segment    | not_null
-
 
 4.5 dbt-expectations Tests (schema.yml) — 30 Tests
 ====================================================
