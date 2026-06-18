@@ -72,6 +72,235 @@ Following the ELT pattern, raw data is loaded into BigQuery before any transform
 
 ---
 
+## 2. Data Warehouse Design
+
+## 2.1 Executive Summary
+In Phase 1, raw Olist e-commerce data was successfully ingested into our Google BigQuery environment (`olist_raw`). 
+This notebook documents Phase 2, where we transform that raw data into a structured **Star Schema** within our Data Warehouse (`olist_dwh`). 
+
+This architectural shift ensures our data is highly organized, strictly typed, and optimized for downstream business intelligence and analytics.
+
+
+## 2.2 Project Milestones Achieved:
+1. **Defined the Conceptual Architecture:** Mapped raw tables to Fact and Dimension tables.
+2. **Established Data Governance:** Shifted from manual database DDL (Create Table scripts) to automated, version-controlled ELT using **dbt (Data Build Tool)**.
+3. **Deployed the Data Mart:** Successfully built the core schema in BigQuery.
+
+
+## 2.3 Visualizing the Architecture
+A Star Schema separates business process events (Facts) from descriptive attributes (Dimensions). Below is the Entity-Relationship Diagram (ERD) defining our target architecture.
+
+```mermaid
+erDiagram
+    fact_orders {
+        string order_item_sk PK
+        string order_key 
+        string product_key FK
+        string seller_key FK
+        string customer_key FK
+        string date_key FK
+        float price
+        float freight_value
+    }
+    dim_date {
+        string date_key PK
+        date full_date
+        int year
+        int month
+        int quarter
+        int day_of_week
+        boolean is_weekend
+    }
+    dim_customers {
+        string customer_key PK
+        string customer_unique_id
+        string customer_city
+        string customer_state
+    }
+    dim_products {
+        string product_key PK
+        string category_name
+        float weight_g
+    }
+    dim_sellers {
+        string seller_key PK
+        string seller_city
+        string seller_state
+        string seller_zip_code_prefix
+    }
+
+    dim_date ||--o{ fact_orders : "1 to N"
+    dim_customers ||--o{ fact_orders : "1 to N"
+    dim_products ||--o{ fact_orders : "1 to N"
+    dim_sellers ||--o{ fact_orders : "1 to N"
+```
+
+
+## 2.4 Schema Design Justification
+When building a data system, the architecture must support the end-users (data analysts and business teams). We selected a Star Schema for the following technical and business reasons:
+
+**Query Efficiency**: By pre-joining and flattening complex relational data into isolated dimensions, analysts can perform fast aggregations (e.g., total sales by month) without writing complex, multi-table joins.
+
+**Data Integrity**: Surrogate and Primary Keys across our dimension tables (`dim_customers`, `dim_products`, `dim_sellers`, `dim_date`) ensure a single source of truth.
+
+Scalability: As the Olist dataset grows, the central `fact_orders` table can scale vertically, while dimension tables handle attribute updates seamlessly.
+
+
+## 2.5 Implementation Methodology (dbt)
+Rather than executing manual `CREATE TABLE` statements, our team utilized dbt to manage our data transformations.
+
+This approach abstracts the DDL logic. We write purely functional `SELECT` statements (models) in the `marts`/ folder, which pull clean data from our `staging/` layer using the `{{ ref() }}` function. dbt then automatically compiles and materializes these models as tables in BigQuery.
+
+Below is the complete SQL implementation for our Data Warehouse, consisting of 4 Dimension tables and 1 Fact table.
+
+
+### 2.5.1 Dimension Models
+The dimension tables flatten descriptive attributes and establish primary keys for downstream filtering.
+
+
+**1. Customers Dimension (`dim_customers.sql`)**
+```SQL
+{{ config(materialized='table') }}
+
+WITH staging_customers AS (
+    SELECT * FROM {{ ref('stg_customers') }}
+)
+
+SELECT
+    customer_id AS customer_key,       -- Using customer_id as our primary key
+    customer_unique_id,
+    customer_city,
+    customer_state
+FROM staging_customers
+```
+
+
+**2. Sellers Dimension (`dim_sellers.sql`)**
+```SQL
+{{ config(materialized='table') }}
+
+WITH staging_sellers AS (
+    SELECT * FROM {{ ref('stg_sellers') }}
+)
+
+SELECT
+    seller_id AS seller_key,           -- Using seller_id as our primary key
+    seller_city,
+    seller_state,
+    seller_zip_code_prefix
+FROM staging_sellers
+```
+
+
+**3. Products Dimension (`dim_products.sql`)**
+```SQL
+{{ config(materialized='table') }}
+
+WITH staging_products AS (
+    SELECT * FROM {{ ref('stg_products') }}
+)
+
+SELECT
+    product_id AS product_key,         -- Using product_id as our primary key
+    product_category_name AS category_name,
+    product_weight_g AS weight_g
+FROM staging_products
+```
+
+
+**4. Date Dimension (`dim_date.sql`)**
+To support robust time-series analysis, we generated a continuous date spine covering the entire lifecycle of the Olist dataset.
+
+```SQL
+{{ config(materialized='table') }}
+
+/* Step A: Create a "Spine" 
+  We use BigQuery's built-in generator to create a continuous list of every single day 
+  from January 1, 2016 to December 31, 2018.
+*/
+WITH date_spine AS (
+    SELECT date_day
+    FROM UNNEST(
+        GENERATE_DATE_ARRAY(DATE('2016-01-01'), DATE('2018-12-31'), INTERVAL 1 DAY)
+    ) AS date_day
+)
+
+/* Step B: Extract the details */
+SELECT
+    -- Turns '2018-01-15' into a clean string '20180115' to match our schema diagram
+    CAST(FORMAT_DATE('%Y%m%d', date_day) AS STRING) AS date_key,
+    
+    date_day AS full_date,
+    EXTRACT(YEAR FROM date_day) AS year,
+    EXTRACT(MONTH FROM date_day) AS month,
+    EXTRACT(QUARTER FROM date_day) AS quarter,
+    EXTRACT(DAYOFWEEK FROM date_day) AS day_of_week,
+    
+    -- In BigQuery, Sunday is 1 and Saturday is 7. This checks if the day is a weekend.
+    CASE
+        WHEN EXTRACT(DAYOFWEEK FROM date_day) IN (1, 7) THEN TRUE 
+        ELSE FALSE
+    END AS is_weekend
+
+FROM date_spine
+```
+
+
+### 2.5.2 Fact Model
+The central fact table captures the measurable business events (order items) and maps them to our dimension keys.
+
+
+**5. Fact Orders (`fact_orders.sql`)**
+```SQL
+{{ config(materialized='table') }}
+
+WITH staging_order_items AS (
+    SELECT * FROM {{ ref('stg_order_items') }}
+),
+
+staging_orders AS (
+    SELECT * FROM {{ ref('stg_orders') }}
+)
+
+SELECT
+    -- Generate a unique surrogate key for each line item
+    CONCAT(i.order_id, '-', CAST(i.order_item_id AS STRING)) AS order_item_sk,
+
+    -- Foreign Keys connecting to Dimensions
+    i.order_id AS order_key,
+    i.product_id AS product_key,
+    i.seller_id AS seller_key,
+    o.customer_id AS customer_key,
+
+    CAST(FORMAT_DATE('%Y%m%d', DATE(o.order_purchase_timestamp)) AS STRING) AS date_key,
+
+    -- Measurable Facts
+    i.price,
+    i.freight_value
+
+FROM staging_order_items i
+LEFT JOIN staging_orders o
+    ON i.order_id = o.order_id
+WHERE o.order_id IS NOT NULL
+```
+
+
+## 2.4 Deployment & Testing
+
+To materialize this architecture in our production BigQuery environment, the following execution plan was executed via the terminal:
+
+Test the Connection: Verified GCP Service Account permissions.
+`dbt debug`
+
+Build the Schema: Compiled the SQL and materialized the tables in BigQuery.
+`dbt run --select marts`
+
+Result: All 5 core tables (`dim_customers`, `dim_products`, `dim_sellers`, `dim_date`, `fact_orders`) were successfully created in the `olist_dwh` dataset.
+
+
+
+---
+
 ## 3. ELT Pipeline
 
 **Tool:** dbt Core v1.9.6  
