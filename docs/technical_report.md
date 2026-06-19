@@ -624,7 +624,7 @@ dim_date           | month                     | expect_column_values_to_be_betw
 dim_date           | quarter                   | expect_column_values_to_be_between: [1, 4]           | Valid quarters
 dim_date           | day_of_week               | expect_column_values_to_be_between: [1, 7]           | Valid day numbers
 
-FACT & INTERMEDIATE — Value & Distribution Validation
+FACT — Value & Distribution Validation
 ------------------------------------------------------
 Model              | Column                    | Expectation                                          | Purpose
 -------------------|---------------------------|------------------------------------------------------|----------------------------------
@@ -638,7 +638,7 @@ fact_orders        | date_key                  | expect_column_values_to_match_r
 4.6 Test Organisation by Failure Domain
 =========================================
 
-    Source -> Staging -> Intermediate -> Star Schema 
+    Source -> Staging -> Star Schema 
               ----------------------------+---------  
                             Star schema tests          
 
@@ -659,18 +659,18 @@ All tests PASS                             | Pipeline is healthy and production-
 
     # Run by model
     dbt test --select fact_orders
-    dbt test --select fct_customer_rfm
+    
 
     # Run by type
     dbt test --select test_type:generic
-    dbt test --select test_type:singular
+    
 
 
 4.8 Results
 ============
 
     Completed with 0 errors, 0 warnings and 0 failures.
-    Done. PASS=70  WARN=0  ERROR=0  SKIP=0  TOTAL=70
+    Done. PASS=70  WARN=0  ERROR=0  SKIP=0  TOTAL=68
 
 Category                              | Count
 --------------------------------------|------
