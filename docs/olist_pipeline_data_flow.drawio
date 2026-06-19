@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2026-06-19T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="Pipeline Data Flow" id="olist-pipeline-flow">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1320" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Orchestration container -->
+        <mxCell id="orch" value="Orchestrated by Dagster" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#888780;verticalAlign=top;align=left;spacingLeft=14;spacingTop=10;fontSize=12;fontColor=#5F5E5A;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="260" y="160" width="340" height="610" as="geometry" />
+        </mxCell>
+
+        <!-- Nodes -->
+        <mxCell id="csv" value="Olist CSV files&#10;Source data, 8 tables" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#5F5E5A;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="meltano" value="Meltano&#10;Extract and load" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="180" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="raw" value="BigQuery: olist_raw&#10;Raw landing zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#5F5E5A;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="320" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dbt" value="dbt core&#10;Clean, stage and model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="460" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dwh" value="BigQuery: olist_dwh&#10;Star schema warehouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#5F5E5A;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="600" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tests" value="dbt tests&#10;68 data quality checks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="700" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="python" value="Python / pandas&#10;SQLAlchemy and RFM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="840" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="insights" value="Insights&#10;Charts and slide deck" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;fontSize=13;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="980" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="csv" target="meltano">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="meltano" target="raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="raw" target="dbt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="dbt" target="dwh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="dwh" target="tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="tests" target="python">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" edge="1" parent="1" source="python" target="insights">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
