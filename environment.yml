@@ -1,0 +1,43 @@
+name: olist
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10.18
+  - pip=25.1
+  - requests=2.32.3
+
+  # dbt / data quality
+  - dbt-core=1.9.6
+  - dbt-bigquery=1.9.1
+  - great-expectations=1.4.1
+
+  # analysis / notebooks
+  - pandas=2.1.4
+  - matplotlib=3.10.0
+  - numpy
+  - seaborn
+  - jupyterlab
+  - ipykernel
+  - sqlalchemy
+  - pyarrow
+
+  - pip:
+      # ingestion
+      - meltano==3.7.8
+
+      # dagster orchestration
+      - dagster==1.9.13
+      - dagster-webserver==1.9.13
+      - dagster-dbt==0.25.13
+      - dagster-meltano==1.5.5
+
+      # optional dagster/local analytics helpers
+      - dagster-duckdb==0.25.13
+      - dagster-duckdb-pandas==0.25.13
+      - duckdb==1.3.0
+
+      # utilities
+      - python-dotenv==1.1.0
