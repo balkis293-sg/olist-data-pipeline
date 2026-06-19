@@ -654,7 +654,7 @@ All tests PASS                             | Pipeline is healthy and production-
     # Install packages
     dbt deps
 
-    # Run all 70 tests
+    # Run all 68 tests
     dbt test
 
     # Run by model
@@ -670,7 +670,7 @@ All tests PASS                             | Pipeline is healthy and production-
 ============
 
     Completed with 0 errors, 0 warnings and 0 failures.
-    Done. PASS=70  WARN=0  ERROR=0  SKIP=0  TOTAL=68
+    Done. PASS=68  WARN=0  ERROR=0  SKIP=0  TOTAL=68
 
 Category                              | Count
 --------------------------------------|------
