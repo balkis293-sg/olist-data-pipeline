@@ -319,3 +319,13 @@ git add docs/technical_report.md README.md
 git commit -m "Update project documentation"
 git push origin elt_part_clean
 ```
+
+## Orchestration 
+
+```bash 
+cd dagster-olist
+dagster dev
+```
+
+1. Open the link from terminal (using Cmd/Cntrl + Click)
+2. Click on "Materialize Asset" and run all assets

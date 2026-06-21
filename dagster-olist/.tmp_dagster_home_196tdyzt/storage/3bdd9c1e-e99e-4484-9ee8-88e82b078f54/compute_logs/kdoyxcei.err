@@ -1,0 +1,121 @@
+[32m2026-06-21 14:37:19 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - 17080 - LOGS_CAPTURED - Capturing logs for process (pid: 17080).
+[32m2026-06-21 14:37:19 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - 17080 - dbt_run - STEP_START - Started execution of step "dbt_run".
+[32m2026-06-21 14:37:19 +0800[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - dbt_run - Running command: dbt run
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - dbt_run - [0m06:37:24  Running with dbt=1.9.6
+[0m06:37:30  Registered adapter: bigquery=1.9.1
+[0m06:37:31  Found 16 models, 62 data tests, 7 sources, 710 macros
+[0m06:37:31  
+[0m06:37:31  Concurrency: 4 threads (target='dev')
+[0m06:37:31  
+[0m06:37:33  1 of 16 START sql table model olist_dwh.dim_date ............................... [RUN]
+[0m06:37:33  2 of 16 START sql view model olist_dwh.stg_customers ........................... [RUN]
+[0m06:37:33  3 of 16 START sql view model olist_dwh.stg_order_items ......................... [RUN]
+[0m06:37:33  4 of 16 START sql view model olist_dwh.stg_orders .............................. [RUN]
+[0m06:37:36  2 of 16 OK created sql view model olist_dwh.stg_customers ...................... [[32mCREATE VIEW (0 processed)[0m in 2.78s]
+[0m06:37:36  5 of 16 START sql view model olist_dwh.stg_payments ............................ [RUN]
+[0m06:37:36  3 of 16 OK created sql view model olist_dwh.stg_order_items .................... [[32mCREATE VIEW (0 processed)[0m in 3.08s]
+[0m06:37:36  4 of 16 OK created sql view model olist_dwh.stg_orders ......................... [[32mCREATE VIEW (0 processed)[0m in 3.08s]
+[0m06:37:36  6 of 16 START sql view model olist_dwh.stg_products ............................ [RUN]
+[0m06:37:36  7 of 16 START sql view model olist_dwh.stg_reviews ............................. [RUN]
+[0m06:37:39  1 of 16 OK created sql table model olist_dwh.dim_date .......................... [[32mCREATE TABLE (1.1k rows, 0 processed)[0m in 5.25s]
+[0m06:37:39  8 of 16 START sql view model olist_dwh.stg_sellers ............................. [RUN]
+[0m06:37:39  6 of 16 OK created sql view model olist_dwh.stg_products ....................... [[32mCREATE VIEW (0 processed)[0m in 2.45s]
+[0m06:37:39  7 of 16 OK created sql view model olist_dwh.stg_reviews ........................ [[32mCREATE VIEW (0 processed)[0m in 2.45s]
+[0m06:37:39  5 of 16 OK created sql view model olist_dwh.stg_payments ....................... [[32mCREATE VIEW (0 processed)[0m in 2.77s]
+[0m06:37:39  9 of 16 START sql table model olist_dwh.dim_customers .......................... [RUN]
+[0m06:37:39  10 of 16 START sql table model olist_dwh.fact_orders ........................... [RUN]
+[0m06:37:39  11 of 16 START sql table model olist_dwh.dim_products .......................... [RUN]
+[0m06:37:40  8 of 16 OK created sql view model olist_dwh.stg_sellers ........................ [[32mCREATE VIEW (0 processed)[0m in 1.78s]
+[0m06:37:40  12 of 16 START sql table model olist_dwh.dim_sellers ........................... [RUN]
+[0m06:37:44  9 of 16 OK created sql table model olist_dwh.dim_customers ..................... [[32mCREATE TABLE (99.4k rows, 8.0 MiB processed)[0m in 5.27s]
+[0m06:37:44  11 of 16 OK created sql table model olist_dwh.dim_products ..................... [[32mCREATE TABLE (33.0k rows, 1.8 MiB processed)[0m in 5.26s]
+[0m06:37:44  12 of 16 OK created sql table model olist_dwh.dim_sellers ...................... [[32mCREATE TABLE (3.1k rows, 175.8 KiB processed)[0m in 4.03s]
+[0m06:37:46  10 of 16 OK created sql table model olist_dwh.fact_orders ...................... [[32mCREATE TABLE (112.7k rows, 22.0 MiB processed)[0m in 6.99s]
+[0m06:37:46  13 of 16 START sql view model olist_dwh.bi_customer_rfm ........................ [RUN]
+[0m06:37:48  13 of 16 OK created sql view model olist_dwh.bi_customer_rfm ................... [[32mCREATE VIEW (0 processed)[0m in 2.19s]
+[0m06:37:48  14 of 16 START sql view model olist_dwh.bi_customer_segments ................... [RUN]
+[0m06:37:50  14 of 16 OK created sql view model olist_dwh.bi_customer_segments .............. [[32mCREATE VIEW (0 processed)[0m in 2.46s]
+[0m06:37:51  15 of 16 START sql view model olist_dwh.bi_executive_summary ................... [RUN]
+[0m06:37:51  16 of 16 START sql view model olist_dwh.bi_segment_summary ..................... [RUN]
+[0m06:37:53  15 of 16 OK created sql view model olist_dwh.bi_executive_summary .............. [[32mCREATE VIEW (0 processed)[0m in 2.35s]
+[0m06:37:54  16 of 16 OK created sql view model olist_dwh.bi_segment_summary ................ [[32mCREATE VIEW (0 processed)[0m in 3.15s]
+[0m06:37:54  
+[0m06:37:54  Finished running 5 table models, 11 view models in 0 hours 0 minutes and 22.36 seconds (22.36s).
+[0m06:37:54  
+[0m06:37:54  [32mCompleted successfully[0m
+[0m06:37:54  
+[0m06:37:54  Done. PASS=16 WARN=0 ERROR=0 SKIP=0 TOTAL=16
+
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - dbt_run - /usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.18) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.18) which Google will stop supporting in new releases of google.cloud.dataproc_v1 once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.cloud.dataproc_v1 past that date.
+  warnings.warn(message, FutureWarning)
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - 17080 - dbt_run - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - dbt_run - Writing file at: /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/dagster-olist/.tmp_dagster_home_196tdyzt/storage/dbt_run using PickledObjectFilesystemIOManager...
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - 17080 - dbt_run - ASSET_MATERIALIZATION - Materialized value dbt_run.
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - 17080 - dbt_run - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2026-06-21 14:37:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3bdd9c1e-e99e-4484-9ee8-88e82b078f54 - 17080 - dbt_run - STEP_SUCCESS - Finished execution of step "dbt_run" in 37.93s.

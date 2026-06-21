@@ -1,0 +1,1269 @@
+[32m2026-06-21 12:30:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 6037 - LOGS_CAPTURED - Capturing logs for process (pid: 6037).
+[32m2026-06-21 12:30:57 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 6037 - meltano_ingestion - STEP_START - Started execution of step "meltano_ingestion".
+[32m2026-06-21 12:30:57 +0800[0m - dagster - [34mINFO[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - meltano_ingestion - Running command: meltano run tap-spreadsheets-anywhere target-bigquery
+[32m2026-06-21 12:44:48 +0800[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - meltano_ingestion - [2m2026-06-21T04:31:00.305438Z[0m [[32minfo     [0m] [36mmeltano     [0m [1mEnvironment 'dev' is active   [0m
+[2m2026-06-21T04:31:00.338347Z[0m [[33mwarning  [0m] [36mmeltano     [0m [1mA new version of Meltano is available (v4.2.1) and you are currently running v4.2.0. For more information, visit: https://docs.meltano.com/getting-started/installation.[0m
+[2m2026-06-21T04:31:00.730154Z[0m [[32minfo     [0m] [36mmeltano     [0m [1mRunning job with name 'dev:tap-spreadsheets-anywhere-to-target-bigquery' and run ID '019ee872-39c4-7a5b-a388-d9e29832bd43'[0m
+[2m2026-06-21T04:31:01.657509Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m/Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/.meltano/loaders/target-bigquery/venv/lib/python3.11/site-packages/fs/__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.[0m
+[2m2026-06-21T04:31:01.658118Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m  __import__("pkg_resources").declare_namespace(__name__)  # type: ignore[0m
+[2m2026-06-21T04:31:02.173590Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Generating catalog through sampling.[0m
+[2m2026-06-21T04:31:02.175506Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:02.175968Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:02.179016Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_orders_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:02.522761Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 1000 records.    [0m
+[2m2026-06-21T04:31:02.553665Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:02.554498Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:02.555197Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_customers_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:02.761668Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 1000 records.    [0m
+[2m2026-06-21T04:31:02.780222Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:02.781169Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:02.781789Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_products_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:03.139350Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 1000 records.    [0m
+[2m2026-06-21T04:31:03.152982Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:03.153650Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:03.154152Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_order_items_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:03.400606Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 1000 records.    [0m
+[2m2026-06-21T04:31:03.421905Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:03.422461Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:03.423156Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_order_payments_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:03.512043Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mUsing thread-based parallelism[0m
+[2m2026-06-21T04:31:03.512453Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget 'target-bigquery' is listening for input from tap.[0m
+[2m2026-06-21T04:31:03.633379Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 1000 records.    [0m
+[2m2026-06-21T04:31:03.645744Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:03.646170Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:03.646490Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_order_reviews_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:04.122500Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 1000 records.    [0m
+[2m2026-06-21T04:31:04.125631Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:04.125978Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:04.126205Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling olist_sellers_dataset.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:04.126405Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 310 records.     [0m
+[2m2026-06-21T04:31:04.126604Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:04.126795Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:04.126987Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampling product_category_name_translation.csv (1000 records, every 10th record).[0m
+[2m2026-06-21T04:31:04.127175Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Sampled 8 records.       [0m
+[2m2026-06-21T04:31:04.127359Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:orders    [0m
+[2m2026-06-21T04:31:04.127550Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:04.127742Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:04.127931Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_orders_dataset.csv".[0m
+[2m2026-06-21T04:31:04.129563Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:31:04.129829Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'orders'...[0m
+[2m2026-06-21T04:31:05.914390Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up orders             [0m
+[2m2026-06-21T04:31:05.930969Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:05.931809Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker 5cffaf590e784eb4802489cbbcfeed97[0m
+[2m2026-06-21T04:31:05.993870Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.043509Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.100586Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.158428Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.208538Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.261889Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.340002Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.405463Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.478009Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.533516Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.586317Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.639188Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.685105Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.745009Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.794237Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.860034Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.916059Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:06.969160Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.018373Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.066021Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.114220Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.167624Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.216649Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.264057Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.311942Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.360144Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.418749Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.466509Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.514033Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.563689Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.611280Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.668513Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.732730Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.784838Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.841566Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.901422Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:07.969281Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.018955Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.068411Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.116781Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.175826Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.237448Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.291041Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.338728Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.386143Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.433046Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.483829Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.531879Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.579784Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.628098Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.675902Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.748640Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.796524Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.845521Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.893059Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:08.942084Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.013835Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.046818Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.094356Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.158044Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.212065Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.261481Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.310794Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.358820Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.414545Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.462312Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.510241Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.561467Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.610852Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.658678Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.721323Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.775427Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.829203Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.880518Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.928517Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:09.977440Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.042132Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.093542Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.151269Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.206581Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.256066Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.303474Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.350716Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.415310Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.447325Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.495870Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.544372Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.597852Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.744756Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.810208Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.860746Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.908995Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:10.956841Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.013699Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.063463Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.118735Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.167695Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.221910Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.273470Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.331733Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.386989Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.444111Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.515014Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.574128Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.625637Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.695639Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.805959Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.873815Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:11.942521Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.000305Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.077355Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.147124Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.147752Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46314 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:12.209596Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.269098Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.320522Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.370938Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.424695Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.481289Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.531850Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.589575Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.639208Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.689272Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.753675Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.820529Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.873642Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.924379Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:12.974587Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.025092Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.092223Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.171718Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.274851Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.338805Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.397288Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.457980Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.518391Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.575090Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.625025Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.681616Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.749086Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.804309Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.859432Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.916637Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:13.977175Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.024261Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 99441 records for stream "orders".[0m
+[2m2026-06-21T04:31:14.024716Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:customers [0m
+[2m2026-06-21T04:31:14.024949Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:14.025262Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:14.025473Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_customers_dataset.csv".[0m
+[2m2026-06-21T04:31:14.048909Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.114153Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.181350Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.234629Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.290144Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.353110Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.418591Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.468322Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.517788Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.566101Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.614263Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.663754Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.726158Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.790938Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.824719Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.875363Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.923553Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:14.983697Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.032041Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.079813Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.130685Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.178326Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.227156Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.282879Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.331315Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.388492Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.440316Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.490047Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.537840Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.587742Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.641300Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.693859Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.756404Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.808249Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.856926Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.903295Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.951399Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:15.954703Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker 5639edc70c4449c4baca17f56b8441f5[0m
+[2m2026-06-21T04:31:16.009286Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.059579Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.108301Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.159616Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.208291Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.261510Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.336216Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.391198Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.464307Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.526643Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.598182Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.648308Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.698253Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.758568Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.830082Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.880894Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.930828Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'orders' is full. Draining...[0m
+[2m2026-06-21T04:31:16.978966Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:31:16.979309Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'customers'...[0m
+[2m2026-06-21T04:31:18.363799Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up customers          [0m
+[2m2026-06-21T04:31:18.379157Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.427560Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.473791Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.534890Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.535606Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46288 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:18.590310Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.642108Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.688297Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.744382Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.791627Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.839882Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.885782Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.932561Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:18.978449Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.025815Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.079072Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.125786Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.173015Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.219484Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.264934Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.312685Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.358761Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.407427Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.453223Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.498690Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.544796Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.609819Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.669148Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.747079Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.795231Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.844059Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.892163Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.939950Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:19.987318Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.051595Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.101013Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.147537Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.194336Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.243035Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.290064Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.335426Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.380634Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.427253Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.473873Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.520227Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.566164Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.612093Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.660857Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.739733Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.789960Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.872798Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.928143Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:20.976298Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.022695Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.069902Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.115402Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.161428Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.208950Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.230032Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 99441 records for stream "customers".[0m
+[2m2026-06-21T04:31:21.230885Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:products  [0m
+[2m2026-06-21T04:31:21.231225Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:21.231435Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:21.231626Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_products_dataset.csv".[0m
+[2m2026-06-21T04:31:21.258564Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.327029Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.390847Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.444283Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.538999Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.590414Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.636598Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.682673Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.738574Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.792927Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.849961Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.897167Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.944812Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:21.990722Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.043918Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.092549Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.140149Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.187596Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.238955Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.309526Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.309988Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46322 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:22.360315Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.407668Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.457182Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.503548Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.550229Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.597604Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.651109Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.696363Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.755506Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.804854Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.860574Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.916183Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:22.962586Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.010811Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.056547Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.103176Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.182984Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.235160Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.282064Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.328564Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.375866Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.422346Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.469280Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.519421Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.566796Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.613876Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.660608Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.718560Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.764547Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.811066Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.857251Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.904796Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.989757Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:23.990276Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46543 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:24.036768Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.083461Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.131853Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.178878Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.225603Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.271978Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.316962Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.363742Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.414555Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.461864Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.507949Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.554477Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.600166Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.644988Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.663042Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 32951 records for stream "products".[0m
+[2m2026-06-21T04:31:24.666878Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:order_items[0m
+[2m2026-06-21T04:31:24.667148Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:24.667349Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:24.667542Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_order_items_dataset.csv".[0m
+[2m2026-06-21T04:31:24.691029Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.751188Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.809830Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.856346Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.906867Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:24.953450Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.010673Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.059527Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.106649Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.153721Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.201555Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.253662Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.301414Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.351680Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.398910Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.446572Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.494377Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.541565Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.592004Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.643215Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.693272Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.753952Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.802156Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.852336Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.898102Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.944719Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.993445Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:25.997585Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker 3a0ae97490524c3382db2b4fa355c0d6[0m
+[2m2026-06-21T04:31:26.051610Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.104803Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.151543Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.197706Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.250489Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.299579Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.393041Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.421278Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.477674Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.531387Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.582153Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.630034Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.675851Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.732644Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.778478Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.826768Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.874394Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.922172Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:26.967416Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.018173Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.065284Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.127217Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.183702Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.247093Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.301337Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.353331Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.411506Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.412073Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46619 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:27.459376Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.512176Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.561692Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.611908Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.659485Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.720773Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.769177Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.825397Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.872871Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.918730Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:27.966008Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.014297Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.098011Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.113308Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.160894Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.212471Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.262066Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.309230Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.354831Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.400152Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'customers' is full. Draining...[0m
+[2m2026-06-21T04:31:28.451322Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:31:28.451735Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'products'...[0m
+[2m2026-06-21T04:31:29.426421Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up products           [0m
+[2m2026-06-21T04:31:29.442877Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.493743Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.545856Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.595291Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.644185Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.692131Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.807653Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.859973Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.915531Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:29.915965Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46353 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:29.963854Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.013850Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.063171Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.112919Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.161382Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.209818Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.261774Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.316556Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.373559Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.425223Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.474949Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.532924Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.583159Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.633891Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.683110Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.793367Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.846245Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.900497Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:30.956126Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.007613Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.059619Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.108819Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.157789Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.207061Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.260527Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.339142Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.415758Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.500870Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.562089Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.638428Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.691935Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.764158Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.850706Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:31.952972Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.005305Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.060904Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.113524Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.163817Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.212996Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.345304Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.453531Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.566500Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.567270Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46452 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:32.647411Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.755416Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.756156Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46586 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:32.832170Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.887486Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.942166Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:32.992202Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.043367Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.096786Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.159014Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.216168Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.275547Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.345489Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.425688Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.486047Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'products' is full. Draining...[0m
+[2m2026-06-21T04:31:33.541912Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:31:33.542492Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'order_items'...[0m
+[2m2026-06-21T04:31:34.625727Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up order_items        [0m
+[2m2026-06-21T04:31:34.637111Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:34.696559Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:34.765872Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:34.816418Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:34.866007Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:34.919274Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:34.968710Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.018834Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.070017Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.119940Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.169227Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.217614Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.265572Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.314087Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.363439Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.412566Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.463953Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.513823Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.562598Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.612400Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.662393Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.722147Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.803710Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.857716Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.908116Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.962179Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:35.972979Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 112650 records for stream "order_items".[0m
+[2m2026-06-21T04:31:35.983663Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:order_payments[0m
+[2m2026-06-21T04:31:35.984197Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:35.984420Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:35.984671Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_order_payments_dataset.csv".[0m
+[2m2026-06-21T04:31:36.012833Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.016438Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker bb4fb4f53707442f858168761867b7c5[0m
+[2m2026-06-21T04:31:36.067836Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.120161Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.169426Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.219818Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.271783Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.326610Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.383755Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.455667Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.510966Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.570347Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.623550Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.679694Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.742740Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.792354Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.847994Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:36.909214Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.004260Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.054689Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.114276Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.114704Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46482 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:37.163546Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.213629Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.267385Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.314982Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.364666Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.415794Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.465772Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.515421Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.564023Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.621017Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.667757Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.731540Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.788541Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.842891Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.899182Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:37.969366Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.027025Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.079557Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.131146Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.239114Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.251959Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.306732Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.357915Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.407703Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.459489Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.508837Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.560965Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.644703Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.664045Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.749040Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.904611Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:38.964169Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.022030Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.081181Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.169909Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.170450Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46529 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:39.228671Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.369930Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.370693Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46425 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:39.445893Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.553084Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.660976Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.729180Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.824815Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:39.934415Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.011133Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.064762Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.133649Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.200626Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.249634Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.316598Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.366815Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.418864Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.467362Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.516524Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.604268Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.677630Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.747214Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.807372Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.879874Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:40.969814Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.030053Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.090813Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.146139Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.209680Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.256925Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.304167Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.352060Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.405060Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.469528Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.569144Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.569709Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[bb4fb4f53707442f858168761867b7c5] Loaded 46407 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:41.617683Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.667092Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.734869Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.784385Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.837688Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.889589Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.954887Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:41.955657Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46230 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:42.020947Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.080246Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.131158Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.179617Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.230911Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.281878Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.404686Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.494101Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.602415Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.666548Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.751106Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.833701Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:42.898238Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.020182Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.125280Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.295122Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.313200Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.377824Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.450763Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.542249Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.595400Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.663538Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.796201Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.869023Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.931855Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:43.984528Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.043379Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.102538Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.161583Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.216109Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.273704Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.328364Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.383515Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.438243Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.494484Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.567947Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.644338Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.744191Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.814454Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.874160Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.928045Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:44.982885Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.082891Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.083329Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46302 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:45.133698Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.182085Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.265304Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.322723Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.383742Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.441039Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.496889Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.552832Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.638108Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.727750Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.782501Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.836732Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.893944Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:45.951694Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.013974Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.070115Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.071753Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker a8beba8993c7416abd9a7005720357de[0m
+[2m2026-06-21T04:31:46.136774Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.137338Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46377 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:46.195183Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 103886 records for stream "order_payments".[0m
+[2m2026-06-21T04:31:46.195696Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:order_reviews[0m
+[2m2026-06-21T04:31:46.196211Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:46.196536Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:46.198327Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_order_reviews_dataset.csv".[0m
+[2m2026-06-21T04:31:46.199220Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.256606Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.312501Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.372741Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.430807Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.546477Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.623222Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.725262Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.787353Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.863003Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.921539Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:46.979630Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.044459Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.110771Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.171856Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.256895Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.257523Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[bb4fb4f53707442f858168761867b7c5] Loaded 46356 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:47.314572Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.372137Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.437076Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.502380Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.568819Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.658339Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.783569Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.868159Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:47.930014Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.046886Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.061231Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.118722Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.179241Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.245577Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.306061Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.370621Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.371225Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46594 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:48.437123Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.523029Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.581838Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.642561Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.703598Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.761556Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.838261Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.900287Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:48.957127Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:49.016250Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:49.072135Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_items' is full. Draining...[0m
+[2m2026-06-21T04:31:49.113354Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:31:49.113908Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'order_payments'...[0m
+[2m2026-06-21T04:31:50.178622Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up order_payments     [0m
+[2m2026-06-21T04:31:50.196987Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.197416Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46444 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:50.249281Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.302085Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.360711Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.412887Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.465786Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.518668Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.571065Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.623832Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.758259Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.780456Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.845089Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.901469Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:50.967404Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.030841Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.082189Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.133884Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.182932Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.232612Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.280461Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.332669Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.383392Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.435206Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.487438Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.545205Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.545744Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46313 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:51.594863Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.649073Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.719289Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.783678Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.852149Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.920524Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:51.974359Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.036343Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.089217Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.138336Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.236945Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.290768Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.345996Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.346450Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[a8beba8993c7416abd9a7005720357de] Loaded 46228 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:52.396272Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.458474Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.519022Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.581848Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.673112Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.757370Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.824575Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.894735Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:52.895350Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[bb4fb4f53707442f858168761867b7c5] Loaded 46382 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:52.955845Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.026411Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.113100Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.181664Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.245545Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.308253Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.380931Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.381581Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46258 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:53.439690Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.495784Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.551692Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.611683Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.670053Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.754638Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.849757Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:53.915738Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.040418Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.106153Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.190805Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.246885Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.307233Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.357331Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.406150Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.454893Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.506031Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.557853Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.608672Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.660741Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.745256Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.802768Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.863378Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.926881Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:54.927584Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46480 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:54.988929Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.046319Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.113533Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.164502Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.234668Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.292832Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.347466Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.398729Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.448280Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.498233Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.553853Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.645015Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.723679Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.782935Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.855819Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.910102Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:55.997167Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.036275Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.094039Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.096319Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker 765b5b3478b14782beb995c8eca59625[0m
+[2m2026-06-21T04:31:56.162126Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.217453Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.289554Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.345521Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.414075Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.470678Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.520850Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.570347Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.618326Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.671209Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.736839Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.795906Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.796455Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46426 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:56.849917Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.905394Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:56.954041Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.006638Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.055916Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.105104Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.159497Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.210555Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.214141Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 99250 records for stream "order_reviews".[0m
+[2m2026-06-21T04:31:57.233214Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:sellers   [0m
+[2m2026-06-21T04:31:57.233629Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:57.233892Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:57.234240Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "olist_sellers_dataset.csv".[0m
+[2m2026-06-21T04:31:57.348017Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.402311Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.453913Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.506497Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.509379Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 3095 records for stream "sellers".[0m
+[2m2026-06-21T04:31:57.547393Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing stream:category_translation[0m
+[2m2026-06-21T04:31:57.548118Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Walking /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data.[0m
+[2m2026-06-21T04:31:57.548416Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Found 9 files.           [0m
+[2m2026-06-21T04:31:57.548631Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Syncing file "product_category_name_translation.csv".[0m
+[2m2026-06-21T04:31:57.548826Z[0m [[32minfo     [0m] [36mtap-spreadsheets-anywhere[0m [1mINFO Wrote 71 records for stream "category_translation".[0m
+[2m2026-06-21T04:31:57.577132Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.633310Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.689368Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.756446Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.813205Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.864507Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.918350Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:57.970593Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.024418Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.083192Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.138905Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.189567Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.242326Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.293907Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.354740Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.355162Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[bb4fb4f53707442f858168761867b7c5] Loaded 46424 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:58.424214Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.424706Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46280 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:58.473742Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.531706Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.532124Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[a8beba8993c7416abd9a7005720357de] Loaded 46326 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:31:58.585181Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.636435Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.687496Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.744751Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.800206Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.849460Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.897459Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:58.950938Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.006634Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.055785Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.105533Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.156878Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.211545Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.264409Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.393320Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.445379Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.511402Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.565635Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.616631Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.667062Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.739569Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.791328Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.841164Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.892191Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:31:59.953974Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.014836Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.066616Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.125546Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.176435Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.228400Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.280111Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.330938Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.388817Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.452872Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.507457Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.561694Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.611725Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.669568Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.670078Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46427 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:00.739153Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.792921Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.848449Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.906788Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:00.960699Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.016099Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.071877Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.137839Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.186646Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.239273Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.290608Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.342525Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.395014Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.446727Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.501787Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.555130Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.612967Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.667534Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.744290Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.797077Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.848705Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.906881Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:01.907288Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46391 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:01.959186Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.015043Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.070668Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.120066Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.177824Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.178250Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[765b5b3478b14782beb995c8eca59625] Loaded 46378 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:02.232797Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.284594Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.337345Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.396119Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_payments' is full. Draining...[0m
+[2m2026-06-21T04:32:02.442268Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:32:02.442600Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'order_reviews'...[0m
+[2m2026-06-21T04:32:03.372274Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up order_reviews      [0m
+[2m2026-06-21T04:32:03.388404Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.448117Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.501761Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.557687Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.612255Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.666053Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.757807Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.758123Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46386 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:03.814098Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.864087Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.915678Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:03.969736Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.023548Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.074662Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.128300Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.183689Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.236128Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.285810Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.341575Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.395008Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.448494Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.506695Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.559029Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.612795Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.666140Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.740598Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.809408Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.810028Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[a8beba8993c7416abd9a7005720357de] Loaded 46330 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:04.883318Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.939002Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:04.993202Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.052670Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.107251Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.158933Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.214822Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.267667Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.326706Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.381095Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.438476Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.500373Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.500895Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[bb4fb4f53707442f858168761867b7c5] Loaded 46240 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:05.553286Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.610863Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.668340Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.736829Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.792835Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.848190Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.917890Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.980926Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:05.981345Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46582 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:06.033440Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.087907Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.188070Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.188483Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker 94b0674f0a0848efae320d833a071e30[0m
+[2m2026-06-21T04:32:06.215857Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.268828Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.322926Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.394600Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.425756Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.479813Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.533276Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.587701Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.638638Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.713861Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.769109Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.825194Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.880478Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:06.956831Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.024238Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.082112Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.082526Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[765b5b3478b14782beb995c8eca59625] Loaded 46593 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:07.134322Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.196770Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.249864Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.306430Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.362707Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.419537Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.477211Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.478103Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46485 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:07.540677Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.598831Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.657891Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.722555Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.778601Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.832955Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.892220Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:07.951267Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.077720Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.133069Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.183883Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.240970Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.294445Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.348938Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.402944Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.457098Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.508392Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.566996Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.621745Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.673163Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.762623Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.836859Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.898099Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:08.953812Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.010808Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.076512Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.149564Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.150055Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46404 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:09.209874Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.266507Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.320770Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.373929Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.426809Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.478245Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.529507Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.581465Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.638613Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.693925Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.754955Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.810635Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.871503Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.924915Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:09.980677Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.033269Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.086050Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.158493Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.222375Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.273967Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.328036Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.385588Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.439487Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.495373Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.555578Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.609194Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.663077Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.734180Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.734898Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[a8beba8993c7416abd9a7005720357de] Loaded 46610 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:10.820961Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.876063Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.932095Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:10.932523Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[3a0ae97490524c3382db2b4fa355c0d6] Loaded 46380 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:10.988167Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.040705Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.097724Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.149603Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.220217Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.276736Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.331628Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.391796Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.445791Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.499191Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.552727Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.606806Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.658803Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.729314Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.786354Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.850016Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.850544Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[bb4fb4f53707442f858168761867b7c5] Loaded 46389 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:11.908818Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:11.966035Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.018991Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.073230Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.125801Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.180101Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.232284Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.299056Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.352075Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.408773Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.465136Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.540628Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.601397Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.664998Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.747450Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.819715Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.820136Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[94b0674f0a0848efae320d833a071e30] Loaded 46407 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:12.874567Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.927627Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:12.979997Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.041919Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.099913Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.154774Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.214438Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.264831Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.320327Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.385066Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.448112Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.499913Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.554086Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.607772Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.667163Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.667711Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[765b5b3478b14782beb995c8eca59625] Loaded 46455 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:13.735242Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.789092Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.852475Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.852891Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5639edc70c4449c4baca17f56b8441f5] Loaded 46248 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:13.906052Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:13.961630Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.016683Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.078015Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.137610Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.191137Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.245026Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.298091Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.352433Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.420921Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.474419Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.534425Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.535186Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[5cffaf590e784eb4802489cbbcfeed97] Loaded 46410 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:32:14.588797Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.643371Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.699709Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.765042Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.822120Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.876257Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'order_reviews' is full. Draining...[0m
+[2m2026-06-21T04:32:14.925996Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:32:14.926334Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'sellers'...[0m
+[2m2026-06-21T04:32:15.833071Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up sellers            [0m
+[2m2026-06-21T04:32:15.847051Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'sellers' is full. Draining...[0m
+[2m2026-06-21T04:32:15.898936Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'sellers' is full. Draining...[0m
+[2m2026-06-21T04:32:15.955714Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'sellers' is full. Draining...[0m
+[2m2026-06-21T04:32:16.008066Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'sellers' is full. Draining...[0m
+[2m2026-06-21T04:32:16.059166Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'sellers' is full. Draining...[0m
+[2m2026-06-21T04:32:16.117388Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget sink for 'sellers' is full. Draining...[0m
+[2m2026-06-21T04:32:16.162942Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing 'target-bigquery' target sink...[0m
+[2m2026-06-21T04:32:16.163342Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mInitializing target sink for stream 'category_translation'...[0m
+[2m2026-06-21T04:32:17.036898Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mSetting up category_translation[0m
+[2m2026-06-21T04:32:17.039695Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mTarget 'target-bigquery' completed reading 550801 lines of input (550785 records, (0 batch manifests, 8 state messages).[0m
+[2m2026-06-21T04:32:17.042755Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mAdding worker 70fc85fbaae743feb21747d0b66bfac1[0m
+[2m2026-06-21T04:32:17.044025Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1m[a8beba8993c7416abd9a7005720357de] Loaded 46437 bytes into olistpersonal21062026.olist_raw.orders.[0m
+[2m2026-06-21T04:44:46.351599Z[0m [[32minfo     [0m] [36mtarget-bigquery[0m [1mEmitting completed target state {"orders": {"modified_since": "2021-10-01T11:08:52+00:00"}, "customers": {"modified_since": "2021-10-01T11:08:42+00:00"}, "products": {"modified_since": "2021-10-01T11:08:54+00:00"}, "order_items": {"modified_since": "2021-10-01T11:08:48+00:00"}, "order_payments": {"modified_since": "2021-10-01T11:08:50+00:00"}, "order_reviews": {"modified_since": "2021-10-01T11:08:52+00:00"}, "sellers": {"modified_since": "2021-10-01T11:08:56+00:00"}, "category_translation": {"modified_since": "2021-10-01T11:08:56+00:00"}}[0m
+[2m2026-06-21T04:44:46.372231Z[0m [[32minfo     [0m] [36mmeltano     [0m [1mUsing systemdb state backend  [0m
+[2m2026-06-21T04:44:46.383561Z[0m [[32minfo     [0m] [36mmeltano     [0m [1mIncremental state has been updated at 2026-06-21 04:44:46.383483+00:00.[0m
+[2m2026-06-21T04:44:46.689888Z[0m [[32minfo     [0m] [36mmeltano     [0m [1mBlock run completed           [0m
+[2m2026-06-21T04:44:46.691650Z[0m [[32minfo     [0m] [36mmeltano     [0m [1mRun completed                 [0m
+
+[32m2026-06-21 12:44:48 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 6037 - meltano_ingestion - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2026-06-21 12:44:48 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - meltano_ingestion - Writing file at: /Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/dagster-olist/.tmp_dagster_home_2f_cvrk7/storage/meltano_ingestion using PickledObjectFilesystemIOManager...
+[32m2026-06-21 12:44:48 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 6037 - meltano_ingestion - ASSET_MATERIALIZATION - Materialized value meltano_ingestion.
+[32m2026-06-21 12:44:48 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 6037 - meltano_ingestion - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2026-06-21 12:44:48 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 6037 - meltano_ingestion - STEP_SUCCESS - Finished execution of step "meltano_ingestion" in 13m50s.

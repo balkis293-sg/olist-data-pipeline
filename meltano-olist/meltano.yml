@@ -12,49 +12,49 @@ plugins:
     executable: tap-spreadsheets-anywhere
     config:
       tables:
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: orders
         pattern: olist_orders_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [order_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: customers
         pattern: olist_customers_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [customer_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: products
         pattern: olist_products_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [product_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: order_items
         pattern: olist_order_items_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [order_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: order_payments
         pattern: olist_order_payments_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [order_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: order_reviews
         pattern: olist_order_reviews_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [review_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: sellers
         pattern: olist_sellers_dataset.csv
         start_date: "2000-01-01T00:00:00Z"
         key_properties: [seller_id]
         format: csv
-      - path: file:///Users/jinping/Documents/data-learning/olist-data-pipeline/meltano-olist/data
+      - path: file:///Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/meltano-olist/data
         name: category_translation
         pattern: product_category_name_translation.csv
         start_date: "2000-01-01T00:00:00Z"
@@ -72,3 +72,4 @@ plugins:
       credentials_path: $GOOGLE_APPLICATION_CREDENTIALS
       method: batch_job
       denormalized: true
+      overwrite: true

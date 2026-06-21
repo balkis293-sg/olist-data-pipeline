@@ -1,0 +1,471 @@
+[32m2026-06-21 12:46:47 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 7908 - LOGS_CAPTURED - Capturing logs for process (pid: 7908).
+[32m2026-06-21 12:46:47 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 7908 - dbt_test - STEP_START - Started execution of step "dbt_test".
+[32m2026-06-21 12:46:47 +0800[0m - dagster - [34mINFO[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - dbt_test - Running command: dbt test
+[32m2026-06-21 12:47:51 +0800[0m - dagster - [34mINFO[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - dbt_test - [0m04:46:53  Running with dbt=1.9.6
+[0m04:46:58  Registered adapter: bigquery=1.9.1
+[0m04:46:59  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.olist_data_pipeline.bi
+[0m04:46:59  Found 12 models, 62 data tests, 7 sources, 710 macros
+[0m04:46:59  
+[0m04:46:59  Concurrency: 4 threads (target='dev')
+[0m04:46:59  
+[0m04:47:01  1 of 62 START test dbt_expectations_expect_column_mean_to_be_between_fact_orders_price__200__50  [RUN]
+[0m04:47:01  2 of 62 START test dbt_expectations_expect_column_value_lengths_to_equal_dim_customers_customer_state__2  [RUN]
+[0m04:47:01  3 of 62 START test dbt_expectations_expect_column_value_lengths_to_equal_dim_date_date_key__8  [RUN]
+[0m04:47:01  4 of 62 START test dbt_expectations_expect_column_value_lengths_to_equal_dim_sellers_seller_state__2  [RUN]
+[0m04:47:03  2 of 62 PASS dbt_expectations_expect_column_value_lengths_to_equal_dim_customers_customer_state__2  [[32mPASS[0m in 2.66s]
+[0m04:47:03  5 of 62 START test dbt_expectations_expect_column_values_to_be_between_dim_date_day_of_week__7__1  [RUN]
+[0m04:47:03  4 of 62 PASS dbt_expectations_expect_column_value_lengths_to_equal_dim_sellers_seller_state__2  [[32mPASS[0m in 2.86s]
+[0m04:47:03  6 of 62 START test dbt_expectations_expect_column_values_to_be_between_dim_date_month__12__1  [RUN]
+[0m04:47:03  1 of 62 PASS dbt_expectations_expect_column_mean_to_be_between_fact_orders_price__200__50  [[32mPASS[0m in 2.89s]
+[0m04:47:03  7 of 62 START test dbt_expectations_expect_column_values_to_be_between_dim_date_quarter__4__1  [RUN]
+[0m04:47:04  3 of 62 PASS dbt_expectations_expect_column_value_lengths_to_equal_dim_date_date_key__8  [[32mPASS[0m in 3.38s]
+[0m04:47:04  8 of 62 START test dbt_expectations_expect_column_values_to_be_between_fact_orders_freight_percentage__1__0  [RUN]
+[0m04:47:06  7 of 62 PASS dbt_expectations_expect_column_values_to_be_between_dim_date_quarter__4__1  [[32mPASS[0m in 2.34s]
+[0m04:47:06  9 of 62 START test dbt_expectations_expect_column_values_to_be_between_fact_orders_freight_value__0__False  [RUN]
+[0m04:47:06  5 of 62 PASS dbt_expectations_expect_column_values_to_be_between_dim_date_day_of_week__7__1  [[32mPASS[0m in 2.63s]
+[0m04:47:06  10 of 62 START test dbt_expectations_expect_column_values_to_be_between_fact_orders_price__0__True  [RUN]
+[0m04:47:06  6 of 62 PASS dbt_expectations_expect_column_values_to_be_between_dim_date_month__12__1  [[32mPASS[0m in 2.70s]
+[0m04:47:06  11 of 62 START test dbt_expectations_expect_column_values_to_be_between_fact_orders_total_sale_amount__0__True  [RUN]
+[0m04:47:07  8 of 62 PASS dbt_expectations_expect_column_values_to_be_between_fact_orders_freight_percentage__1__0  [[32mPASS[0m in 2.92s]
+[0m04:47:07  12 of 62 START test dbt_expectations_expect_column_values_to_be_between_stg_order_items_freight_value__0__False  [RUN]
+[0m04:47:08  9 of 62 PASS dbt_expectations_expect_column_values_to_be_between_fact_orders_freight_value__0__False  [[32mPASS[0m in 2.59s]
+[0m04:47:08  13 of 62 START test dbt_expectations_expect_column_values_to_be_between_stg_order_items_price__0__True  [RUN]
+[0m04:47:09  10 of 62 PASS dbt_expectations_expect_column_values_to_be_between_fact_orders_price__0__True  [[32mPASS[0m in 2.66s]
+[0m04:47:09  14 of 62 START test dbt_expectations_expect_column_values_to_be_between_stg_payments_payment_installments__24__0  [RUN]
+[0m04:47:09  11 of 62 PASS dbt_expectations_expect_column_values_to_be_between_fact_orders_total_sale_amount__0__True  [[32mPASS[0m in 2.43s]
+[0m04:47:09  15 of 62 START test dbt_expectations_expect_column_values_to_be_between_stg_payments_payment_value__100000__0__False  [RUN]
+[0m04:47:10  12 of 62 PASS dbt_expectations_expect_column_values_to_be_between_stg_order_items_freight_value__0__False  [[32mPASS[0m in 2.69s]
+[0m04:47:10  16 of 62 START test dbt_expectations_expect_column_values_to_be_between_stg_products_product_weight_g__0__True  [RUN]
+[0m04:47:11  13 of 62 PASS dbt_expectations_expect_column_values_to_be_between_stg_order_items_price__0__True  [[32mPASS[0m in 2.38s]
+[0m04:47:11  17 of 62 START test dbt_expectations_expect_column_values_to_be_between_stg_reviews_review_score__5__1  [RUN]
+[0m04:47:11  15 of 62 PASS dbt_expectations_expect_column_values_to_be_between_stg_payments_payment_value__100000__0__False  [[32mPASS[0m in 2.83s]
+[0m04:47:11  18 of 62 START test dbt_expectations_expect_column_values_to_be_in_set_stg_orders_order_status__delivered__shipped__canceled__unavailable__invoiced__processing__created__approved  [RUN]
+[0m04:47:13  16 of 62 WARN 8 dbt_expectations_expect_column_values_to_be_between_stg_products_product_weight_g__0__True  [[33mWARN 8[0m in 3.13s]
+[0m04:47:13  19 of 62 START test dbt_expectations_expect_column_values_to_be_in_set_stg_payments_payment_type__credit_card__boleto__voucher__debit_card__not_defined  [RUN]
+[0m04:47:14  14 of 62 PASS dbt_expectations_expect_column_values_to_be_between_stg_payments_payment_installments__24__0  [[32mPASS[0m in 5.52s]
+[0m04:47:14  20 of 62 START test dbt_expectations_expect_column_values_to_be_of_type_stg_orders_order_id__string  [RUN]
+[0m04:47:14  17 of 62 PASS dbt_expectations_expect_column_values_to_be_between_stg_reviews_review_score__5__1  [[32mPASS[0m in 3.56s]
+[0m04:47:14  21 of 62 START test dbt_expectations_expect_column_values_to_be_of_type_stg_orders_order_purchase_timestamp__timestamp  [RUN]
+[0m04:47:15  18 of 62 PASS dbt_expectations_expect_column_values_to_be_in_set_stg_orders_order_status__delivered__shipped__canceled__unavailable__invoiced__processing__created__approved  [[32mPASS[0m in 3.20s]
+[0m04:47:15  22 of 62 START test dbt_expectations_expect_column_values_to_match_regex_dim_date_date_key___0_9_8_  [RUN]
+[0m04:47:16  19 of 62 PASS dbt_expectations_expect_column_values_to_be_in_set_stg_payments_payment_type__credit_card__boleto__voucher__debit_card__not_defined  [[32mPASS[0m in 3.05s]
+[0m04:47:16  23 of 62 START test dbt_expectations_expect_column_values_to_match_regex_fact_orders_date_key___0_9_8_  [RUN]
+[0m04:47:17  20 of 62 PASS dbt_expectations_expect_column_values_to_be_of_type_stg_orders_order_id__string  [[32mPASS[0m in 2.71s]
+[0m04:47:17  24 of 62 START test dbt_expectations_expect_table_row_count_to_be_between_dim_customers_110000__90000  [RUN]
+[0m04:47:17  22 of 62 PASS dbt_expectations_expect_column_values_to_match_regex_dim_date_date_key___0_9_8_  [[32mPASS[0m in 2.81s]
+[0m04:47:17  25 of 62 START test dbt_expectations_expect_table_row_count_to_be_between_dim_sellers_4000__3000  [RUN]
+[0m04:47:18  21 of 62 PASS dbt_expectations_expect_column_values_to_be_of_type_stg_orders_order_purchase_timestamp__timestamp  [[32mPASS[0m in 3.58s]
+[0m04:47:18  26 of 62 START test dbt_expectations_expect_table_row_count_to_be_between_fact_orders_130000__100000  [RUN]
+[0m04:47:18  23 of 62 PASS dbt_expectations_expect_column_values_to_match_regex_fact_orders_date_key___0_9_8_  [[32mPASS[0m in 2.23s]
+[0m04:47:18  27 of 62 START test dbt_expectations_expect_table_row_count_to_equal_dim_date_1096  [RUN]
+[0m04:47:19  24 of 62 FAIL 1 dbt_expectations_expect_table_row_count_to_be_between_dim_customers_110000__90000  [[31mFAIL 1[0m in 2.66s]
+[0m04:47:19  28 of 62 START test not_null_dim_customers_customer_key ........................ [RUN]
+[0m04:47:20  25 of 62 FAIL 1 dbt_expectations_expect_table_row_count_to_be_between_dim_sellers_4000__3000  [[31mFAIL 1[0m in 2.14s]
+[0m04:47:20  29 of 62 START test not_null_dim_date_date_key ................................. [RUN]
+[0m04:47:20  26 of 62 FAIL 1 dbt_expectations_expect_table_row_count_to_be_between_fact_orders_130000__100000  [[31mFAIL 1[0m in 2.39s]
+[0m04:47:20  30 of 62 START test not_null_dim_products_product_key .......................... [RUN]
+[0m04:47:20  27 of 62 PASS dbt_expectations_expect_table_row_count_to_equal_dim_date_1096 ... [[32mPASS[0m in 2.43s]
+[0m04:47:20  31 of 62 START test not_null_dim_sellers_seller_key ............................ [RUN]
+[0m04:47:22  29 of 62 PASS not_null_dim_date_date_key ....................................... [[32mPASS[0m in 2.29s]
+[0m04:47:22  32 of 62 START test not_null_fact_orders_customer_key .......................... [RUN]
+[0m04:47:22  28 of 62 PASS not_null_dim_customers_customer_key .............................. [[32mPASS[0m in 2.59s]
+[0m04:47:22  33 of 62 START test not_null_fact_orders_date_key .............................. [RUN]
+[0m04:47:23  30 of 62 PASS not_null_dim_products_product_key ................................ [[32mPASS[0m in 2.31s]
+[0m04:47:23  34 of 62 START test not_null_fact_orders_order_item_sk ......................... [RUN]
+[0m04:47:24  31 of 62 PASS not_null_dim_sellers_seller_key .................................. [[32mPASS[0m in 3.54s]
+[0m04:47:24  35 of 62 START test not_null_fact_orders_order_key ............................. [RUN]
+[0m04:47:24  32 of 62 PASS not_null_fact_orders_customer_key ................................ [[32mPASS[0m in 2.32s]
+[0m04:47:24  36 of 62 START test not_null_fact_orders_product_key ........................... [RUN]
+[0m04:47:25  34 of 62 PASS not_null_fact_orders_order_item_sk ............................... [[32mPASS[0m in 2.24s]
+[0m04:47:25  37 of 62 START test not_null_fact_orders_seller_key ............................ [RUN]
+[0m04:47:25  33 of 62 PASS not_null_fact_orders_date_key .................................... [[32mPASS[0m in 3.06s]
+[0m04:47:25  38 of 62 START test not_null_stg_customers_customer_id ......................... [RUN]
+[0m04:47:27  36 of 62 PASS not_null_fact_orders_product_key ................................. [[32mPASS[0m in 2.59s]
+[0m04:47:27  39 of 62 START test not_null_stg_customers_customer_unique_id .................. [RUN]
+[0m04:47:28  38 of 62 PASS not_null_stg_customers_customer_id ............................... [[32mPASS[0m in 2.48s]
+[0m04:47:28  40 of 62 START test not_null_stg_order_items_order_id .......................... [RUN]
+[0m04:47:28  37 of 62 PASS not_null_fact_orders_seller_key .................................. [[32mPASS[0m in 2.93s]
+[0m04:47:28  41 of 62 START test not_null_stg_order_items_product_id ........................ [RUN]
+[0m04:47:29  35 of 62 PASS not_null_fact_orders_order_key ................................... [[32mPASS[0m in 4.98s]
+[0m04:47:29  42 of 62 START test not_null_stg_order_items_seller_id ......................... [RUN]
+[0m04:47:30  39 of 62 PASS not_null_stg_customers_customer_unique_id ........................ [[32mPASS[0m in 3.01s]
+[0m04:47:30  43 of 62 START test not_null_stg_orders_customer_id ............................ [RUN]
+[0m04:47:30  41 of 62 PASS not_null_stg_order_items_product_id .............................. [[32mPASS[0m in 2.26s]
+[0m04:47:30  44 of 62 START test not_null_stg_orders_order_id ............................... [RUN]
+[0m04:47:30  40 of 62 PASS not_null_stg_order_items_order_id ................................ [[32mPASS[0m in 2.53s]
+[0m04:47:30  45 of 62 START test not_null_stg_payments_order_id ............................. [RUN]
+[0m04:47:32  42 of 62 PASS not_null_stg_order_items_seller_id ............................... [[32mPASS[0m in 2.57s]
+[0m04:47:32  46 of 62 START test not_null_stg_payments_payment_value ........................ [RUN]
+[0m04:47:33  43 of 62 PASS not_null_stg_orders_customer_id .................................. [[32mPASS[0m in 2.73s]
+[0m04:47:33  47 of 62 START test not_null_stg_products_product_id ........................... [RUN]
+[0m04:47:33  45 of 62 PASS not_null_stg_payments_order_id ................................... [[32mPASS[0m in 2.61s]
+[0m04:47:33  48 of 62 START test not_null_stg_reviews_order_id .............................. [RUN]
+[0m04:47:34  46 of 62 PASS not_null_stg_payments_payment_value .............................. [[32mPASS[0m in 2.88s]
+[0m04:47:34  49 of 62 START test not_null_stg_reviews_review_id ............................. [RUN]
+[0m04:47:35  47 of 62 PASS not_null_stg_products_product_id ................................. [[32mPASS[0m in 2.32s]
+[0m04:47:35  50 of 62 START test not_null_stg_sellers_seller_id ............................. [RUN]
+[0m04:47:35  44 of 62 PASS not_null_stg_orders_order_id ..................................... [[32mPASS[0m in 4.85s]
+[0m04:47:35  51 of 62 START test relationships_fact_orders_customer_key__customer_key__ref_dim_customers_  [RUN]
+[0m04:47:35  48 of 62 PASS not_null_stg_reviews_order_id .................................... [[32mPASS[0m in 2.24s]
+[0m04:47:35  52 of 62 START test relationships_fact_orders_date_key__date_key__ref_dim_date_  [RUN]
+[0m04:47:37  49 of 62 PASS not_null_stg_reviews_review_id ................................... [[32mPASS[0m in 2.53s]
+[0m04:47:37  53 of 62 START test relationships_fact_orders_product_key__product_key__ref_dim_products_  [RUN]
+[0m04:47:37  50 of 62 PASS not_null_stg_sellers_seller_id ................................... [[32mPASS[0m in 2.49s]
+[0m04:47:37  54 of 62 START test relationships_fact_orders_seller_key__seller_key__ref_dim_sellers_  [RUN]
+[0m04:47:38  52 of 62 PASS relationships_fact_orders_date_key__date_key__ref_dim_date_ ...... [[32mPASS[0m in 2.76s]
+[0m04:47:38  55 of 62 START test unique_dim_customers_customer_key .......................... [RUN]
+[0m04:47:38  51 of 62 PASS relationships_fact_orders_customer_key__customer_key__ref_dim_customers_  [[32mPASS[0m in 2.97s]
+[0m04:47:38  56 of 62 START test unique_dim_date_date_key ................................... [RUN]
+[0m04:47:40  53 of 62 PASS relationships_fact_orders_product_key__product_key__ref_dim_products_  [[32mPASS[0m in 3.17s]
+[0m04:47:40  57 of 62 START test unique_dim_products_product_key ............................ [RUN]
+[0m04:47:40  55 of 62 FAIL 99441 unique_dim_customers_customer_key .......................... [[31mFAIL 99441[0m in 2.60s]
+[0m04:47:40  58 of 62 START test unique_dim_sellers_seller_key .............................. [RUN]
+[0m04:47:41  54 of 62 PASS relationships_fact_orders_seller_key__seller_key__ref_dim_sellers_  [[32mPASS[0m in 3.29s]
+[0m04:47:41  59 of 62 START test unique_fact_orders_order_item_sk ........................... [RUN]
+[0m04:47:41  56 of 62 PASS unique_dim_date_date_key ......................................... [[32mPASS[0m in 3.23s]
+[0m04:47:41  60 of 62 START test unique_stg_orders_order_id ................................. [RUN]
+[0m04:47:44  57 of 62 FAIL 32951 unique_dim_products_product_key ............................ [[31mFAIL 32951[0m in 3.41s]
+[0m04:47:44  61 of 62 START test unique_stg_products_product_id ............................. [RUN]
+[0m04:47:44  58 of 62 FAIL 3095 unique_dim_sellers_seller_key ............................... [[31mFAIL 3095[0m in 3.37s]
+[0m04:47:44  62 of 62 START test unique_stg_sellers_seller_id ............................... [RUN]
+[0m04:47:44  60 of 62 FAIL 99441 unique_stg_orders_order_id ................................. [[31mFAIL 99441[0m in 2.93s]
+[0m04:47:44  59 of 62 FAIL 112650 unique_fact_orders_order_item_sk .......................... [[31mFAIL 112650[0m in 3.62s]
+[0m04:47:46  62 of 62 FAIL 3095 unique_stg_sellers_seller_id ................................ [[31mFAIL 3095[0m in 2.69s]
+[0m04:47:47  61 of 62 FAIL 32951 unique_stg_products_product_id ............................. [[31mFAIL 32951[0m in 3.30s]
+[0m04:47:47  
+[0m04:47:47  Finished running 62 data tests in 0 hours 0 minutes and 47.62 seconds (47.62s).
+[0m04:47:47  
+[0m04:47:47  [31mCompleted with 10 errors, 0 partial successes, and 1 warning:[0m
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test dbt_expectations_expect_table_row_count_to_be_between_dim_customers_110000__90000 (models/schema.yml)[0m
+[0m04:47:47    Got 1 result, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/dbt_expectations_expect_table__016354208433f118f65353f555d34700.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test dbt_expectations_expect_table_row_count_to_be_between_dim_sellers_4000__3000 (models/schema.yml)[0m
+[0m04:47:47    Got 1 result, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/dbt_expectations_expect_table__95c6b26a4a4b0932d5ba9c45dc462297.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test dbt_expectations_expect_table_row_count_to_be_between_fact_orders_130000__100000 (models/schema.yml)[0m
+[0m04:47:47    Got 1 result, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/dbt_expectations_expect_table__96435480a8b73734fcee0770cf58f73f.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_dim_customers_customer_key (models/schema.yml)[0m
+[0m04:47:47    Got 99441 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_dim_customers_customer_key.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_dim_products_product_key (models/schema.yml)[0m
+[0m04:47:47    Got 32951 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_dim_products_product_key.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_dim_sellers_seller_key (models/schema.yml)[0m
+[0m04:47:47    Got 3095 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_dim_sellers_seller_key.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_stg_orders_order_id (models/schema.yml)[0m
+[0m04:47:47    Got 99441 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_stg_orders_order_id.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_fact_orders_order_item_sk (models/schema.yml)[0m
+[0m04:47:47    Got 112650 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_fact_orders_order_item_sk.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_stg_sellers_seller_id (models/schema.yml)[0m
+[0m04:47:47    Got 3095 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_stg_sellers_seller_id.sql
+[0m04:47:47  
+[0m04:47:47  [31mFailure in test unique_stg_products_product_id (models/schema.yml)[0m
+[0m04:47:47    Got 32951 results, configured to fail if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/unique_stg_products_product_id.sql
+[0m04:47:47  
+[0m04:47:47  [33mWarning in test dbt_expectations_expect_column_values_to_be_between_stg_products_product_weight_g__0__True (models/schema.yml)[0m
+[0m04:47:47  Got 8 results, configured to warn if != 0
+[0m04:47:47  
+[0m04:47:47    compiled code at target/compiled/olist_data_pipeline/models/schema.yml/dbt_expectations_expect_column_ef1802990122c379c0292cbbbaeef117.sql
+[0m04:47:47  
+[0m04:47:47  Done. PASS=51 WARN=1 ERROR=10 SKIP=0 TOTAL=62
+
+[32m2026-06-21 12:47:51 +0800[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - dbt_test - /usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.18) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.18) which Google will stop supporting in new releases of google.cloud.dataproc_v1 once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.cloud.dataproc_v1 past that date.
+  warnings.warn(message, FutureWarning)
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+/usr/local/Caskroom/miniforge/base/envs/olist/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py:570: FutureWarning: job_retry must be explicitly set to None if job_id is set.
+BigQuery cannot retry a failed job by using the exact
+same ID. Setting job_id without explicitly disabling
+job_retry will raise an error in the future. To avoid this
+warning, either use job_id_prefix instead (preferred) or
+set job_retry=None.
+  query_job = client.query(
+
+[32m2026-06-21 12:47:51 +0800[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 631dcc7a-7f4d-4c17-bfb7-3136dba5483d - 7908 - dbt_test - STEP_FAILURE - Execution of step "dbt_test" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_test"::
+
+RuntimeError: Command failed: dbt test
+
+Stack Trace:
+  File "/Users/balkis/.pyenv/versions/3.11.9/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/Users/balkis/.pyenv/versions/3.11.9/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/balkis/.pyenv/versions/3.11.9/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 136, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/balkis/.pyenv/versions/3.11.9/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 116, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/dagster-olist/dagster_olist/assets.py", line 54, in dbt_test
+    run_command(["dbt", "test"], DBT_DIR, context)
+  File "/Users/balkis/Documents/NTU_DSAI_April_2026/olist-data-pipeline/dagster-olist/dagster_olist/assets.py", line 30, in run_command
+    raise RuntimeError(f"Command failed: {' '.join(command)}")
+[0m
