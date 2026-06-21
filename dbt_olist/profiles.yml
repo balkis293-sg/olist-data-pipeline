@@ -4,7 +4,7 @@ olist_data_pipeline:
       dataset: olist_dwh
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: /Users/balkis/Downloads/olistpersonal21062026-f0a0bd733562.json
+      keyfile: #path to service account JSON file for BigQuery credentials
       location: US
       method: service-account
       priority: interactive
